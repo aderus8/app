@@ -1,0 +1,24 @@
+.blur-bg {
+    filter: blur(2px);
+    /*filter: grayscale(0.8);*/
+    width: calc(100% - 225px);
+    margin-left: 225px;
+    background-image: url("https://img.freepik.com/premium-vector/blue-white-gradient-color-background-with-copy-space-graphic-design_120819-1342.jpg");
+    background-size: cover;
+    /*width: 100%;*/
+    height: auto;
+    min-height: 100%;
+    position: absolute;
+    transition: 0.2s ease-in-out;
+}
+.normal-bg{
+    filter: none;
+    background-image: url("https://img.freepik.com/premium-vector/blue-white-gradient-color-background-with-copy-space-graphic-design_120819-1342.jpg");
+    background-size: cover;
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+    position: absolute;
+    transition: 0.3s ease-in-out;
+
+}

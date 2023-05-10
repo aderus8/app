@@ -1,0 +1,12 @@
+.img{
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /*!*position: relative;*!*/
+    /*top: 0px;*/
+    /*object-fit: cover;*/
+    background-image: url("https://uploads-ssl.webflow.com/5a9ee6416e90d20001b20038/62ee05c49147fee5d04794ce_Rectangle%201%20(69).svg");
+}
+
+

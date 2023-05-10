@@ -1,0 +1,34 @@
+.flag-box{
+    width: 200px;
+    /*height: 170px;*/
+    /*background-color: transparent;*/
+    background-color: white;
+    padding: 2px;
+    margin: 7px; /* dodanie marginesu */
+    box-sizing: border-box; /* uwzględnienie marginesów i paddingów w szerokości */
+    display: flex;
+    flex-direction: column;
+    box-shadow: 5px 5px 10px grey;
+    border-radius: 2px;
+    transition: 0.3s ease;
+    cursor: pointer;
+    /*filter: grayscale(100%) blur(5px);*/
+    /*filter: blur(1px);*/
+
+}
+.flag-box:hover{
+    transform: scale(1.1);
+    z-index: 1000;
+    /*filter: blur(0px);*/
+    /*transform: translate(50px, 50px) scale(1.5) rotate(45deg);*/
+}
+.flag-box img{
+    width: 180px;
+    height: 110px;
+    align-self: center;
+    margin: 5px;
+}
+.flag-box h5{
+    align-self: center;
+    font-size: 16px;
+}

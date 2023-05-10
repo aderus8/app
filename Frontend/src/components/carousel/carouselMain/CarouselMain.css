@@ -1,0 +1,85 @@
+.div1{
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    color: white;
+    /*background-color: #09b1ec;*/
+}
+.div2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(4px);
+}
+
+.div3{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70vh;
+    background: linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+
+}
+.div4{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+}
+.div5{
+    margin-left: 10px;
+    grid-column: span 1 / auto;
+    margin-top: 5px;
+}
+.div6{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+
+}
+.h1-div6{
+    color: white;
+    margin-top: 40px;
+    margin-bottom: 4px;
+    align-self: center;
+
+}
+.poster{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.imageFlag{
+    width: 320px;
+    height: 200px;
+    z-index: 1;
+    position: relative;
+    align-self: center;
+    transition: 0.3s ease;
+    cursor: pointer;
+    /*perspective: 1000px;*/
+    /*transform-style: preserve-3d;*/
+    /*transform: rotateY(20deg) translateZ(50px);*/
+    /*box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);*/
+}
+.imageFlag:hover{
+    perspective: 1000px;
+    transform: scale(1.1);
+    /*transform-style: preserve-3d;*/
+    /*transform: rotateY(20deg) translateZ(50px);*/
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+}
+.bg{
+    background-image: url("https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80");
+}

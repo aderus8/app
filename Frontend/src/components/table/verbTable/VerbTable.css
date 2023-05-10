@@ -1,0 +1,91 @@
+.container-irregular-verbs{
+    margin: 10px;
+
+}
+.irregular-verbs-table {
+    margin-top: 20px;
+    margin-bottom: 15px;
+    width: 80%;
+    border-collapse: collapse;
+    box-shadow: 0px 5px 20px #797070;
+}
+/* Zebra striping */
+.irregular-verbs-table tr:nth-of-type(odd) {
+    /*background: #f5f4f4;*/
+    background: white;
+}
+.irregular-verbs-table tr:nth-of-type(even) {
+    /*background: #f5f4f4;*/
+    background: #f3f3f3;
+}
+.irregular-verbs-table th {
+    background: #000000;
+    color: white;
+    font-weight: bold;
+
+}
+.irregular-verbs-table td,
+.irregular-verbs-table th {
+    padding: 6px;
+    border: 1px solid rgba(204, 204, 204, 0.22);
+    text-align: left;
+}
+.irregular-verbs-table tr:hover {
+    background-color: #C9EFFF;
+    font-weight: bold;
+}
+
+@media
+only screen and (max-width: 600px){
+    /* Force table to not be like tables anymore */
+    .irregular-verbs-table,
+    .irregular-verbs-table thead,
+    .irregular-verbs-table tbody,
+    .irregular-verbs-table th,
+    .irregular-verbs-table td,
+    .irregular-verbs-table tr {
+        display: block;
+    }
+    .irregular-verbs-table{
+        width: 90%;
+    }
+    .container-irregular-verbs{
+        margin: 0px;
+    }
+    /* Hide table headers (but not display: none;, for accessibility) */
+    .irregular-verbs-table thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    .irregular-verbs-table tr { border: 1px solid #ccc; }
+
+    .irregular-verbs-table td {
+        /* Behave  like a "row" */
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%;
+    }
+
+    .irregular-verbs-table td:before {
+        /* Now like a table header */
+        position: absolute;
+        /* Top/left values mimic padding */
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        font-weight: 700;
+    }
+
+    /*
+    Label the data
+    */
+    .irregular-verbs-table td:nth-of-type(1):before { content: "1st"; }
+    .irregular-verbs-table td:nth-of-type(2):before { content: "2nd"; }
+    .irregular-verbs-table td:nth-of-type(3):before { content: "3rd"; }
+
+}
