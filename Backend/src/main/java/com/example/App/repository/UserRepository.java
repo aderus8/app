@@ -1,7 +1,7 @@
 package com.example.App.repository;
 
 import com.example.App.entity.User;
-import com.example.App.wrapper.UserWrapper;
+import com.example.App.dto.UserDto;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.repository.query.Param;
@@ -15,7 +15,7 @@ public interface UserRepository extends JpaRepository<User, Integer> {
 
     @Override
     List<User> findAll();
-    List<UserWrapper> getAllUser();
+    List<UserDto> getAllUser();
     List<String> getAllAdmin();
 
     @Transactional
@@ -23,5 +23,6 @@ public interface UserRepository extends JpaRepository<User, Integer> {
     Integer updateStatus(@Param("status") String status,@Param("id") Integer id);
 
     User findByEmail(String email);
+    User findUserById(Integer id);
 
 }

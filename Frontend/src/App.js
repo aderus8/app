@@ -1,8 +1,8 @@
-import {Route, Routes} from "react-router-dom";
+import {Route, Router, Routes} from "react-router-dom";
 import Home from "./pages/home/Home";
 import Navbar from "./components/navbar/Navbar";
-import SignUp from "./pages/signup/SignUp";
-import Login from "./pages/signup/Login";
+import SignUp from "./pages/account/SignUp";
+import Login from "./pages/account/Login";
 import Users from "./pages/users/Users";
 import Words from "./pages/words/Words";
 import Definitions from "./pages/words/Definitions";
@@ -10,13 +10,14 @@ import "./App.css";
 import QuizDetails from "./pages/quiz/quizDetails/QuizDetails";
 import IrregularVerbs from "./pages/IrregularVerbs";
 import {useState} from "react";
-import Account from "./pages/signup/Account";
+import Account from "./pages/account/Account";
 import QuizPage from "./pages/quiz/quizPage/QuizPage";
 import Home2 from "./pages/home/Home2";
 
 function App() {
     const [side, setSide] = useState(false);
     function handleSideMenu() {
+        console.log("side przekazywany: "+ side);
         setSide((prevState) => !prevState);
     }
 

@@ -7,12 +7,7 @@ export const Menu = [
         icon: "fas fa-home"
     },
 
-    {
-        title : "Users",
-        url : "/users",
-        cName : "nav-links",
-        icon: "fas fa-home"
-    },
+
     {
         title : "Words",
         url : "/words",
@@ -20,12 +15,11 @@ export const Menu = [
         icon: "fas fa-home"
     },
 
-
     {
         title : "SIGN UP",
         url : "/signup",
         cName : "button-signup",
-
     },
+
 
 ]

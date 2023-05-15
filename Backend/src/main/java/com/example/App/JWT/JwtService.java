@@ -14,7 +14,7 @@ import java.util.function.Function;
 @Service
 public class JwtService {
 
-    private String secret = "btechdays";
+    private String secret = "password";
 
     public String extractUsername(String token){
         return extractClamis(token,Claims::getSubject);

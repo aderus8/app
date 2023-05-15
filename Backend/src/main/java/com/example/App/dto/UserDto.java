@@ -1,17 +1,26 @@
 package com.example.App.dto;
 
 import lombok.Data;
-
-import java.io.Serializable;
+import lombok.NoArgsConstructor;
 
 @Data
-public class UserDto implements Serializable {
-
+@NoArgsConstructor
+public class UserDto {
     private Integer id;
+
     private String name;
-    private String contactNumber;
+
     private String email;
-    private String password;
+
+    private String contactNumber;
+
     private String status;
-    private String role;
+
+    public UserDto(Integer id, String name, String email, String contactNumber, String status) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.contactNumber = contactNumber;
+        this.status = status;
+    }
 }

@@ -11,25 +11,25 @@ const Users = () => {
         getUsers();
     }, []);
 
-    const isAdmin = () => {
-        const token = localStorage.getItem('token');
-        if (!token) {
-            return false;
-        }
-        const decodedToken = JSON.parse(atob(token.split('.')[1]));
-        return decodedToken.role === 'admin';
-    };
 
     const getUsers = () => {
-        if (isAdmin()) {
-            axios.get("http://localhost:8080/user/all")
-                .then((response) => {
-                    setUsers(response.data);
-                }).catch((error) => {
-                console.log(error);
+        const token = localStorage.getItem('token');
+        const axiosInstance = axios.create({
+            headers: {
+                'Authorization': 'Bearer ' + token
+            }
+        });
+
+        axiosInstance.get('http://localhost:8080/user/all')
+            .then(response => {
+                console.log(response.data);
+                setUsers(response.data);
             })
-        }
+            .catch(error => {
+                console.error(error);
+            });
     }
+
 
     return (
         <div style={{marginTop : '100px', display:"flex", alignItems: "center", flexDirection: "column"}}>

@@ -23,7 +23,7 @@ const Home = () => {
 
                 {Languages.map((item, index) => {
                     return(
-                        <FlagCard title={item.title} image={item.image} index={index}/>
+                        <FlagCard key={item.title} title={item.title} image={item.image} index={index}/>
                     )
                 })}
             </div>

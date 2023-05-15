@@ -10,7 +10,7 @@ const SignUp = () => {
     const [password, setPassword] = useState();
     const [name, setName] = useState();
     const [contactNumber, setContactNumber] = useState();
-    const [id, setId] = useState();
+    const [id, setId] = useState('1');
     const navigate = useNavigate()
 
 
@@ -32,8 +32,9 @@ const SignUp = () => {
             "contactNumber": contactNumber,
             "password": password,
         })
-            .then((response) => setId(response.data.id))
+            .then((response) => setId(response.data.token))
             .catch((err) => console.log(err));
+        navigate("/login");
     }
 
     return(

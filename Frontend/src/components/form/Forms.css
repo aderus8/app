@@ -27,7 +27,7 @@
 
 }
 .form-box h1{
-    margin-top: 10px;
+    margin-top: 20px;
     align-self: center;
     display: flex;
     justify-content: center;
@@ -88,12 +88,12 @@
     font-size: 20px;
 }
 .submit-button:focus {
-    box-shadow: #ffffff 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgb(36, 133, 253) 0 3px 3px -3px, #2485fd 0 -3px 0 inset;
+    box-shadow: #ffffff 0 0 0 1.5px inset, rgb(36, 133, 253) 0 2px 4px, rgb(36, 133, 253) 0 3px 3px -3px, #2485fd 0 -3px 0 inset;
 }
 
 .submit-button:hover {
     box-shadow: rgb(132, 201, 239) 0 2px 2px, rgb(132, 201, 239) 0 3px 3px -3px, #9294a1 0 -3px 0 inset;
-    transform: translateY(-2px);
+    transform: translateY(-1px);
 }
 
 .submit-button:active {

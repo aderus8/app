@@ -10,6 +10,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
@@ -34,6 +35,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
     @Bean
     public PasswordEncoder passwordEncoder(){
         return NoOpPasswordEncoder.getInstance();
+//        return new BCryptPasswordEncoder();
     }
     @Bean(name = BeanIds.AUTHENTICATION_MANAGER)
     @Override
@@ -47,6 +49,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
                 .and()
                 .csrf().disable()
                 .authorizeRequests()
+//                .antMatchers("/user/all").authenticated()  // MICHAŁ MÓWIŁ ŻEBY DOPISAĆ
                 .antMatchers("/user/login","/user/signup","/user/forgotPassword")
                 .permitAll()
                 .anyRequest()

@@ -21,6 +21,7 @@ const Account = () => {
                 <div className="third-1"> 1</div>
                 <div className="third-2"> 1</div>
             </div>
+
         </div>
     )
 }

@@ -1,7 +1,7 @@
 package com.example.App.service;
 
+import com.example.App.dto.UserDto;
 import com.example.App.entity.User;
-import com.example.App.wrapper.UserWrapper;
 import org.springframework.http.ResponseEntity;
 
 import java.util.List;
@@ -12,8 +12,7 @@ public interface UserService {
 
     ResponseEntity<String> signUp(Map<String, String> requestMap);
 
-    ResponseEntity<List<UserWrapper>> getAllUser();
-    ResponseEntity<String> login(Map<String, String> requestMap);
+    ResponseEntity<List<UserDto>> getAllUser();    ResponseEntity<String> login(Map<String, String> requestMap);
 
     ResponseEntity<String> update(Map<String, String> requestMap);
 
@@ -22,4 +21,5 @@ public interface UserService {
     ResponseEntity<String> changePassword(Map<String, String> requestMap);
 
     ResponseEntity<String> forgotPassword(Map<String, String> requestMap);
+
 }

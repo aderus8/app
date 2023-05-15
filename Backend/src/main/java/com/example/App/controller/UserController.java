@@ -1,7 +1,8 @@
 package com.example.App.controller;
 
+import com.example.App.entity.User;
 import com.example.App.service.UserService;
-import com.example.App.wrapper.UserWrapper;
+import com.example.App.dto.UserDto;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,7 +23,6 @@ public class UserController {
     public UserController(UserService userService) {
         this.userService = userService;
     }
-
 
 
     @PostMapping(path = "/signup")
@@ -48,14 +48,14 @@ public class UserController {
 
     //ZMIENIC CHYBA TO LIST<USER>
     @GetMapping(path = "/all")
-    public ResponseEntity<List<UserWrapper>> getAllUser() {
+    public ResponseEntity<List<UserDto>> getAllUser() {
         log.info("all users");
         try {
             return userService.getAllUser();
         } catch (Exception exception) {
             exception.printStackTrace();
         }
-        return new ResponseEntity<List<UserWrapper>>(new ArrayList<>(), HttpStatus.INTERNAL_SERVER_ERROR);
+        return new ResponseEntity<List<UserDto>>(new ArrayList<>(), HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
     @PutMapping(path = "/update")
@@ -97,5 +97,9 @@ public class UserController {
         }
         return new ResponseEntity<>("Something went wrong(forgotPassword)", HttpStatus.INTERNAL_SERVER_ERROR);
     }
+
+
+
+
 
 }

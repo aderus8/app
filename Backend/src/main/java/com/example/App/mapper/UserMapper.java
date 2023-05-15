@@ -8,7 +8,7 @@ import java.util.Map;
 @Component
 public class UserMapper {
 
-    public User mapToUser(Map<String, String> requestMap) {
+    public User convertMapToUser(Map<String, String> requestMap) {
         return new User.Builder()
                 .name(requestMap.get("name"))
                 .contactNumber(requestMap.get("contactNumber"))
