@@ -3,13 +3,13 @@ export const Photos = [
         title: "Ćwiczenia",
         url: "/home2",
         description: "",
-        image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80"
+        image:"https://c0.wallpaperflare.com/preview/922/269/165/coffee-women-laptop-computer.jpg"
     },
     {
         title: "Quizy",
         url: "/quizpage",
         description: "",
-        image: "https://d-tm.ppstatic.pl/kadry/c6/42/3afceb88dc08dfee43861a492a5c.1000.jpg"
+        image: "https://s.tvp.pl/images/d/d/3/uid_dd37c4c3f35a40059967dc4314c01623_width_500_play_0_pos_0_gs_0_height_281.jpg"
         },
     {
         title: "Testy",
@@ -21,7 +21,7 @@ export const Photos = [
         title: "Gramatyka",
         url: "/gramma",
         description: "",
-        image: "https://images.unsplash.com/photo-1565022536102-f7645c84354a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1173&q=80"
+        image: "https://cdn.pixabay.com/photo/2015/11/19/21/10/glasses-1052010_1280.jpg"
     },
 
 

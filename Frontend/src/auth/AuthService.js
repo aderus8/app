@@ -1,4 +1,5 @@
 import axios from 'axios';
+import jwt_decode from "jwt-decode";
 
 const API_URL = "http://localhost:8080/user/";
 
@@ -30,9 +31,35 @@ class AuthService {
         });
     }
 
-    getCurrentUser(){
+    update(id, status){
+        const token = localStorage.getItem('token');
+        const axiosInstance = axios.create({
+            headers: {
+                'Authorization': 'Bearer ' + token
+            }
+        });
+        return axiosInstance.put(API_URL + "update", {
+            id,
+            status
+        });
+    }
+
+    getCurrentUserToken(){
         return JSON.parse(localStorage.getItem("user"))
     }
+
+    getMailAndRole(){
+        const currentUser = this.getCurrentUserToken();
+        if (currentUser) {
+            return jwt_decode(localStorage.getItem("token"));
+        }
+    }
+
+    isAdmin(){
+        const decodedToken = jwt_decode(localStorage.getItem("token"));
+        return decodedToken.role === "admin";
+    }
+
 }
 
 export default new AuthService()

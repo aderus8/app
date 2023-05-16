@@ -2,13 +2,13 @@
 export const UserMenu = [
     {
         title : "Home",
-        url : "/",
+        url : "/userhome",
         cName : "nav-links",
         icon: "fas fa-home"
     },
     {
         title : "Exercises",
-        url : "/home2",
+        url : "/exercises",
         cName : "nav-links",
         icon: "fas fa-home"
     },

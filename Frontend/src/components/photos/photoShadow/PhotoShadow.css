@@ -2,7 +2,6 @@
     position: relative;
     width: 100%;
     height: 100vh;
-    /*top: -80px;*/
     color: white;
     box-shadow: 1px 5px 15px #8593a2;
 
@@ -57,10 +56,16 @@
     .div6 {
         left: 35%;
     }
+    .div1, .div2, .div3{
+        height: 55vh;
+    }
 }
 @media screen and (max-width: 700px){
     .div6{
         left: 50%;
+    }
+    .div1, .div2, .div3{
+        height: 40vh;
     }
 }
 .h1-div6{

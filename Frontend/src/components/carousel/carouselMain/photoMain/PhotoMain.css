@@ -87,3 +87,18 @@
     background-color: white;
     color: black;
 }
+@media screen and (max-width: 900px) {
+    .div6 {
+        left: 35%;
+    }
+    .div1, .div2, .div3{
+        height: 85vh;
+    }}
+@media screen and (max-width: 700px){
+    .div6{
+        left: 50%;
+    }
+    .div1, .div2, .div3{
+        height: 65vh;
+    }
+}

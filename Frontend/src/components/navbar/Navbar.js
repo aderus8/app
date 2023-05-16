@@ -27,7 +27,7 @@ const Navbar = ({isSide, onSideMenuToggle}) => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        const currentUser = AuthService.getCurrentUser();
+        const currentUser = AuthService.getCurrentUserToken();
         if(currentUser) {
             const decodedToken = jwt_decode(localStorage.getItem("token"));
             console.log("decodedToken: " + decodedToken);
@@ -56,18 +56,23 @@ const Navbar = ({isSide, onSideMenuToggle}) => {
     };
 
     const handleClick = () => {
-        setClicked(!clicked);
-        const nav = document.querySelector(".toggle-side-button");
-        if(!clicked){
-            nav.classList.add('hidden');
-        } else {
-            nav.classList.remove('hidden');
+        console.log("handle clicl");
+        if(!isSidebar) {
+            setClicked(!clicked);
+            const nav = document.querySelector(".toggle-side-button");
+            if (!clicked) {
+                nav.classList.add('hidden');
+            } else {
+                nav.classList.remove('hidden');
+            }
         }
     };
 
     const toggleSidebar = () => {
         setIsSidebar(!isSidebar);
         onSideMenuToggle();
+        setClicked(false);
+        console.log("clicked w sidebarze na: " + clicked);
         //ZROBIĆ TO JAKO OSOBNĄ FUNKCJE I DOPIERO TU DODAĆ
         const nav = document.querySelector(".navbar-items");
 

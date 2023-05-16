@@ -1,0 +1,63 @@
+.user-home{
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(217deg, rgba(250, 250, 250, 0.99), rgba(255,0,0,0) 70.71%),
+    linear-gradient(127deg, rgb(183, 183, 190), rgba(0,255,0,0) 70.71%),
+    linear-gradient(336deg, rgb(192, 189, 189), rgba(0,0,255,0) 70.71%);  opacity: 1;
+    }
+
+.first-block{
+    display: flex;
+    flex-direction: row;
+
+}
+
+.all-page-photos-user{
+    top: -60px;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    overflow-y: hidden;
+    flex-wrap: wrap; /* dodanie wrap */
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s ease-in-out;
+    position: relative;
+    margin: 0;
+    box-shadow: 0px 5px 10px grey;
+}
+.photo-bg2{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background: linear-gradient(217deg, rgba(250, 250, 250, 0.99), rgba(255,0,0,0) 70.71%),
+    linear-gradient(127deg, rgb(183, 183, 190), rgba(0,255,0,0) 70.71%),
+    linear-gradient(336deg, rgb(192, 189, 189), rgba(0,0,255,0) 70.71%);  opacity: 1;
+    width: 50%;
+    height:50%;
+    box-shadow: 1px 2px 5px gray;
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    z-index:0;
+    text-align: center;
+}
+.photo-bg2 h1{
+    font-size: 24px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+.photo-bg2 p{
+    font-size: 20px;
+    padding: 10px;
+}
+@media screen and (max-width: 700px) {
+    .all-page-photos-user{
+        height: 200vh;
+    }
+    .photo-bg2{
+            width: 100%;
+            height:25%;
+    }
+}
+

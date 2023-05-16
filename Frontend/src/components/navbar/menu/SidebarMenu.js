@@ -8,7 +8,7 @@ export const SidebarMenu = [
     },
     {
         title : "Ćwiczenia",
-        url : "/home2",
+        url : "/exercises",
         // cName : "nav-links",
     },
 

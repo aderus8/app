@@ -5,12 +5,28 @@ const API_URL = "http://localhost:8080/user/";
 
 class UserService {
 
-    getPublicContent(){
-        return axios.get(API_URL + "all");
+    // OBA CHYBA NIE DZIALAJA
+    // !!!!!!!!!!!!!!!!!!!1
+
+    getAll(){
+        return axios.get(API_URL + 'user', { headers: AuthHeader() });
+    }
+    getUsers = () => {
+        const token = localStorage.getItem('token');
+        const axiosInstance = axios.create({
+            headers: {
+                'Authorization': 'Bearer ' + token
+            }
+        });
+        return axiosInstance.get('http://localhost:8080/user/all')
+            .then(response => {
+                console.log(response.data);
+            })
+            .catch(error => {
+                console.error(error);
+            });
     }
 
-    getUserBoard(){
-        return axios.get(API_URL + 'all', {headers: AuthHeader()});
-    }
+
 }
 export default new UserService();

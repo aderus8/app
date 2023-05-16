@@ -1,7 +1,7 @@
 export const AdminMenu = [
     {
         title : "Home",
-        url : "/",
+        url : "/adminhome",
         cName : "nav-links",
         icon: "fas fa-home"
     },

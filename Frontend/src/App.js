@@ -1,5 +1,5 @@
-import {Route, Router, Routes} from "react-router-dom";
-import Home from "./pages/home/Home";
+import {Route, Routes} from "react-router-dom";
+import Home from "./pages/home/home/Home";
 import Navbar from "./components/navbar/Navbar";
 import SignUp from "./pages/account/SignUp";
 import Login from "./pages/account/Login";
@@ -12,7 +12,9 @@ import IrregularVerbs from "./pages/IrregularVerbs";
 import {useState} from "react";
 import Account from "./pages/account/Account";
 import QuizPage from "./pages/quiz/quizPage/QuizPage";
-import Home2 from "./pages/home/Home2";
+import Exercises from "./pages/exercises/Exercises";
+import AdminHome from "./pages/home/adminHome/AdminHome";
+import UserHome from "./pages/home/userHome/UserHome";
 
 function App() {
     const [side, setSide] = useState(false);
@@ -41,7 +43,9 @@ function App() {
                       <Route path="/irregularverbs" element={<IrregularVerbs/>}/>
                       <Route path="/account" element={<Account/>}/>
                       <Route path="/quizpage" element={<QuizPage/>}/>
-                      <Route path="/home2" element={<Home2/>}/>
+                      <Route path="/exercises" element={<Exercises/>}/>
+                      <Route path="/adminhome" element={<AdminHome/>}/>
+                      <Route path="/userhome" element={<UserHome/>}/>
              </Routes>
           </div>
       </>

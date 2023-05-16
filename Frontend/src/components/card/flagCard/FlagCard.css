@@ -4,7 +4,7 @@
     /*background-color: transparent;*/
     background-color: white;
     padding: 2px;
-    margin: 7px; /* dodanie marginesu */
+    margin: 12px;
     box-sizing: border-box; /* uwzględnienie marginesów i paddingów w szerokości */
     display: flex;
     flex-direction: column;

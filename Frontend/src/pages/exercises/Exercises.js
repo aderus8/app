@@ -1,9 +1,9 @@
 import React from "react";
-import "./Home2.css";
+import "./Exercises.css";
 import {Photos} from "../../components/carousel/carouselMain/photoMain/Photos";
 import PhotoShadowHover from "../../components/photos/photoShadowHover/PhotoShadowHover";
 
-const Home2 = () => {
+const Exercises = () => {
 
     return (
         <div className="all-page-photos">
@@ -16,4 +16,4 @@ const Home2 = () => {
     )
 }
 
-export default Home2;
+export default Exercises;
