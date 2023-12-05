@@ -3,7 +3,7 @@ import "./Navbar.css";
 import {Link, useNavigate} from "react-router-dom"
 import {Menu} from "./menu/Menu";
 import {UserMenu} from "./menu/UserMenu";
-import {SidebarMenu} from "./menu/SidebarMenu";
+import {SidebarMenu, SidebarMenuGuest, SidebarMenuAdmin} from "./menu/SidebarMenu";
 import jwt_decode from "jwt-decode";
 import AuthService from "../../auth/AuthService";
 import {AdminMenu} from "./menu/AdminMenu";
@@ -96,7 +96,9 @@ const Navbar = ({isSide, onSideMenuToggle}) => {
 
         return (
             <div className={isSidebar ? 'sidebar open' : 'sidebar'}>
-                {SidebarMenu.map((item, index) => {
+                {role==='user' && (
+                    <>
+                    {SidebarMenu.map((item, index) => {
                     return(
                         <ul key={index}>
                             <li key={index}>
@@ -104,6 +106,32 @@ const Navbar = ({isSide, onSideMenuToggle}) => {
                         </ul>
                     )
                 })}
+                    </>
+                )}
+                {role==='guest' && (
+                    <>
+                        {SidebarMenuGuest.map((item, index) => {
+                            return(
+                                <ul key={index}>
+                                    <li key={index}>
+                                        <a className="sidebar-a" href={item.url}> <i className={item.icon}></i>{item.title}</a></li>
+                                </ul>
+                            )
+                        })}
+                    </>
+                )}
+                {role==='admin' && (
+                    <>
+                        {SidebarMenuAdmin.map((item, index) => {
+                            return(
+                                <ul key={index}>
+                                    <li key={index}>
+                                        <a className="sidebar-a" href={item.url}> <i className={item.icon}></i>{item.title}</a></li>
+                                </ul>
+                            )
+                        })}
+                    </>
+                )}
 
 
                 <nav className="navbar-items">

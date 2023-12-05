@@ -1,43 +1,107 @@
 //array of nav links
 export const SidebarMenu = [
     {
-        title : "Konto",
+        title : "Account",
         url : "/account",
         icon: "fa fa-user-circle"
 
     },
     {
-        title : "Ćwiczenia",
+        title : "Exercises",
         url : "/exercises",
         // cName : "nav-links",
     },
 
 
     {
-        title : "Słówka",
+        title : "Words",
         url : "/words",
     },
     {
-        title : "Definicje",
+        title : "Definitions",
         url : "/definitions",
     },
 
     {
-        title : "Quizy",
-        url : "/quiz",
+        title : "Reading",
+        url : "/reading",
     },
     {
-        title : "Quizy Wszystko",
+        title : "Quiz All",
         url : "/quizpage",
     },
     {
-        title : "Testy",
-        url : "/test",
+        title : "Test",
+        url : "/tests",
     },
     {
-        title : "Czasowniki nieregularne",
+        title : "Irregular Verbs",
+        url : "/irregularverbs",
+    },
+]
+export const SidebarMenuGuest = [
+    {
+        title : "Exercises",
+        url : "/exercises",
+        // cName : "nav-links",
+    },
+    {
+        title : "Words",
+        url : "/words",
+    },
+    {
+        title : "Definitions",
+        url : "/definitions",
+    },
+
+    {
+        title : "Irregular Verbs",
+        url : "/irregularverbs",
+    },
+]
+export const SidebarMenuAdmin = [
+    {
+        title : "Admin Home",
+        url : "/adminhome",
+        icon: "fa fa-user-circle"
+
+    },
+    {
+        title : "Users",
+        url : "/users",
+
+    },
+
+    {
+        title : "Exercises",
+        url : "/exercises",
+        // cName : "nav-links",
+    },
+    {
+        title : "Words",
+        url : "/words",
+    },
+    {
+        title : "Definitions",
+        url : "/definitions",
+    },
+
+    {
+        title : "Quiz",
+        url : "/quiz",
+    },
+    {
+        title : "Quiz All",
+        url : "/quizpage",
+    },
+    {
+        title : "Test",
+        url : "/tests",
+    },
+    {
+        title : "Irregular Verbs",
         url : "/irregularverbs",
     },
 
-
 ]
+

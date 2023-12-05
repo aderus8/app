@@ -1,12 +1,25 @@
-.img{
+.bg-singup-img{
     width: 100%;
     height: 100vh;
     background-size: cover;
     background-repeat: no-repeat;
+
     /*!*position: relative;*!*/
     /*top: 0px;*/
     /*object-fit: cover;*/
-    background-image: url("https://uploads-ssl.webflow.com/5a9ee6416e90d20001b20038/62ee05c49147fee5d04794ce_Rectangle%201%20(69).svg");
+    /*background-image: url("https://uploads-ssl.webflow.com/5a9ee6416e90d20001b20038/62ee05c49147fee5d04794ce_Rectangle%201%20(69).svg");*/
+    background-image: url("https://img.freepik.com/free-photo/english-book-resting-table-working-space_23-2149429592.jpg?w=996&t=st=1700411472~exp=1700412072~hmac=5857e6302418e850e75f28b7e4c87e5876311504ee99715ea09c93c5e2f5497c");
 }
 
 
+.all-login{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url("https://img.freepik.com/free-photo/english-book-resting-table-working-space_23-2149429592.jpg?w=996&t=st=1700411472~exp=1700412072~hmac=5857e6302418e850e75f28b7e4c87e5876311504ee99715ea09c93c5e2f5497c");
+
+}

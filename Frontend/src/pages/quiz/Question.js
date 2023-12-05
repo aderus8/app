@@ -19,7 +19,7 @@ const Question = ({   question,
             <h2>
                 {questionNumber}/{totalQuestions}. {question.question}
             </h2>
-            <h4>result: {result}</h4>
+            <h4> {result}</h4>
             <div className="buttons">
                 {question.answers.map((answer, index) => (
                     <button key={index} onClick={() => handleAnswer(answer)}>

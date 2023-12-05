@@ -4,6 +4,7 @@ import com.example.App.EmailNAZWA;
 import com.example.App.JWT.JAKASNAZWAUserDetailsService;
 import com.example.App.JWT.JwtAuthFilter;
 import com.example.App.JWT.JwtService;
+import com.example.App.dto.UserCounterDto;
 import com.example.App.entity.User;
 import com.example.App.mapper.UserMapper;
 import com.example.App.repository.UserRepository;
@@ -54,10 +55,11 @@ public class UserServiceImpl implements UserService {
             exception.printStackTrace();
         }
         return new ResponseEntity<>("Something went wrong", HttpStatus.INTERNAL_SERVER_ERROR);
-   }
+   }    //ZWRÓĆIĆ DTO DO KONTROLERA A TU BEZ RESPONSE ENTITY
 
     //SPRAWDZIĆ CZY TO NA PEWNO DOBRZE DZIAŁA !!!!!!!!!!
     // TO NIE DZIAŁA
+    // ALE CHYBA JUŻ DZIAŁA
     private boolean validateSignUpMap(Map<String, String> requestMap){
 //        if (requestMap.containsKey("name") && requestMap.containsKey("contactNumber")
 //                && requestMap.containsKey("email") && requestMap.containsKey("password")) {
@@ -96,13 +98,13 @@ public class UserServiceImpl implements UserService {
         }
         return new ResponseEntity<>("Email already exists", HttpStatus.BAD_REQUEST);
     }
-
+// DTO MA BYĆ
 //  CZY TO RETURN PO JWTFILTER ADMIN JEST OK?
     @Override
     public ResponseEntity<List<UserDto>> getAllUser() {
         log.info("get all ");
         try{
-            if(jwtFilter.isAdmin()){
+            if(jwtFilter.isAdmin()){ //TRZEBA ZROBIĆ MAPPER
                 return new ResponseEntity<>(userRepository.getAllUser(), HttpStatus.OK);
             } else {
                 return new ResponseEntity<>(new ArrayList<>(),HttpStatus.UNAUTHORIZED);
@@ -198,7 +200,10 @@ public class UserServiceImpl implements UserService {
         return new ResponseEntity<>("Something went wrong(userServiceImpl forgotPassword)", HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
-
+    @Override
+    public UserCounterDto countUsers() {
+        return new UserCounterDto.Builder().counter(userRepository.count()).build();
+    }
 
 
 }

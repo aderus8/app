@@ -46,7 +46,8 @@ const SignUp = () => {
                     recycle={false}
                     onConfettiComplete={handleConfettiComplete}
                 />
-            )}            <div className="img">
+            )}
+            <div className="bg-singup-img">
                 <UserForm
                 newUser={true}
                 onSubmit={addNewUser}

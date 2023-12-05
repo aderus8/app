@@ -3,7 +3,8 @@
     /*filter: grayscale(0.8);*/
     width: calc(100% - 225px);
     margin-left: 225px;
-    background-image: url("https://img.freepik.com/premium-vector/blue-white-gradient-color-background-with-copy-space-graphic-design_120819-1342.jpg");
+    background-color: white;
+    /*background-image: url("https://img.freepik.com/premium-vector/blue-white-gradient-color-background-with-copy-space-graphic-design_120819-1342.jpg");*/
     background-size: cover;
     /*width: 100%;*/
     height: auto;
@@ -13,12 +14,16 @@
 }
 .normal-bg{
     filter: none;
-    background-image: url("https://img.freepik.com/premium-vector/blue-white-gradient-color-background-with-copy-space-graphic-design_120819-1342.jpg");
+    background-color: white;
+
+    /*background-image: url("https://img.freepik.com/premium-vector/blue-white-gradient-color-background-with-copy-space-graphic-design_120819-1342.jpg");*/
     background-size: cover;
     width: 100%;
     height: auto;
     min-height: 100%;
     position: absolute;
     transition: 0.3s ease-in-out;
-
+}
+.photo-bg-london{
+    background-image: url("https://i.pinimg.com/564x/2a/65/5e/2a655e704970cd43ed6ccc4cf62d3423.jpg")
 }

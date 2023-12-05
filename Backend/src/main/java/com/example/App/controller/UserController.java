@@ -1,6 +1,8 @@
 package com.example.App.controller;
 
+import com.example.App.dto.UserCounterDto;
 import com.example.App.entity.User;
+import com.example.App.repository.UserRepository;
 import com.example.App.service.UserService;
 import com.example.App.dto.UserDto;
 import lombok.extern.slf4j.Slf4j;
@@ -17,11 +19,14 @@ import java.util.Map;
 @RestController
 @RequestMapping(path = "/user")
 public class UserController {
+    private final UserRepository userRepository;
 
     final UserService userService;
 
-    public UserController(UserService userService) {
+    public UserController(UserService userService,
+                          UserRepository userRepository) {
         this.userService = userService;
+        this.userRepository = userRepository;
     }
 
 
@@ -99,6 +104,13 @@ public class UserController {
     }
 
 
+    @GetMapping(path = "/counter")
+    public ResponseEntity<UserCounterDto> countUsers() {
+        log.info("counter ");
+
+        UserCounterDto userCounterDto = userService.countUsers();
+        return new ResponseEntity<>(userCounterDto, HttpStatus.OK);
+    }
 
 
 

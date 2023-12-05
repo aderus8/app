@@ -2,25 +2,39 @@ import React, {useEffect, useState} from 'react';
 import AuthService from "../../../auth/AuthService";
 import "./AdminHome.css";
 import {Link} from "react-router-dom";
+import axios from "axios";
+const API_URL = "http://localhost:8080/user/";
 
 const AdminHome = () => {
     const [account, setAccount] = useState({
         email: "",
         role: ""
     });
+    const [userCounter, setUserCounter] = useState('');
+    //userCounter.counter żeby wyświetlić
 
     useEffect(() => {
         setAccount(AuthService.getMailAndRole());
+        // countUsers();
     }, []);
+
+
+    // const countUsers = ()=>{
+    //     axios.get(API_URL + 'counter')
+    //         .then(response => {
+    //             setUserCounter(response.data);
+    //         })
+    // }
 
 
 
     return (
 
         <div className="admin-home">
+            <div className="box-admin">
                 <div className="first-column">
                     <Link to={"/account"} className="admin-card">
-                        <img src={require('../../../assets/admin.png')}/>
+                        <img src={require('../../../assets/icons/admin.jpg')}/>
                         <h2> {account.role.toUpperCase()}</h2>
                         {/*<h6> {account.sub} </h6>*/}
                     </Link>
@@ -30,23 +44,29 @@ const AdminHome = () => {
                     <div className="admin-cards">
 
                     <Link to={"/users"} className="admin-cards-2">
-                        <img src={require('../../../assets/user.png')}/>
+                        <img src={require('../../../assets/icons/blueGradient/user.png')}/>
                         <h2> Użytkownicy </h2>
+                        <h2> {userCounter.counter} </h2>
+
                     </Link>
 
-                    <div className="admin-cards-2">
-                        <img src={require('../../../assets/approval.png')}/>
-                        <h2> Testy </h2>
-                    </div>
+                        <Link to={"/tests"}>
+                            <div className="admin-cards-2">
+                                <img src={require('../../../assets/icons/blueGradient/approval.png')}/>
+                                <h2> Testy </h2>
+                            </div>
+                        </Link>
 
-                    <div className="admin-cards-2">
-                        <img src={require('../../../assets/quiz.png')}/>
-                        <h2> Quizy </h2>
-                    </div>
+                        <Link to={"/quizpage"}>
+                            <div className="admin-cards-2">
+                                <img src={require('../../../assets/icons/blueGradient/quiz.png')}/>
+                                <h2> Quizy </h2>
+                            </div>
+                        </Link>
                     </div>
 
                 </div>
-
+            </div>
         </div>
     )
 }

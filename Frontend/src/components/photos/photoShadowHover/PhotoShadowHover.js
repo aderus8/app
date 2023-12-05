@@ -7,12 +7,10 @@ const PhotoShadowHover = ({image, title,link}) => {
     return (
             <div className="photo-bg" style={{backgroundImage: `url(${image})`}}>
                 <Link to={link}>
-
                 <div className="shadow">
                    <h1 className="shadow-text"> {title} </h1>
                 </div>
                 </Link>
-
             </div>
 
     )

@@ -1,3 +1,19 @@
+.words-bg{
+    width: 100%;
+    height: 100vh;
+    margin-top: -110px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url("https://img.freepik.com/darmowe-zdjecie/angielska-ksiazka-z-okularami-na-stole_23-2149429567.jpg?w=996&t=st=1701035561~exp=1701036161~hmac=c996dacce2e26780eaf9982011be874a2f4b7f449db1a2679f5cc969904fefb4");
+}
+.def-bg{
+    width: 100%;
+    height: 100vh;
+    margin-top: -110px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url("https://img.freepik.com/darmowe-zdjecie/angielska-ksiazka-z-okularami-na-stole_23-2149429567.jpg?w=996&t=st=1701035561~exp=1701036161~hmac=c996dacce2e26780eaf9982011be874a2f4b7f449db1a2679f5cc969904fefb4");
+}
 .container-words{
     margin-top: 70px;
     height: auto;
@@ -5,7 +21,7 @@
     display: flex;
     flex-direction: row;
     overflow-y: hidden;
-    flex-wrap: wrap; /* dodanie wrap */
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
 }
@@ -15,27 +31,37 @@
     display: flex;
     flex-direction: row;
     overflow-y: hidden;
-    flex-wrap: wrap; /* dodanie wrap */
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     padding-bottom: 12px;
 }
 .chooselevel h1{
     width: 100%;
-
+    margin-top: 80px;
+    text-align: center;
+    padding-bottom: 10px;
 }
 
 .chooselevel button{
-    background-image: url("https://thumbs.dreamstime.com/b/landscape-nature-view-background-view-window-landscape-nature-view-background-view-window-wonderful-landscape-121459679.jpg");
-    background-size: cover;
-    width: 33%;
-    height: 100px;
-    box-shadow: 0 1px 5px grey;
-    cursor: pointer;
+    width: 15vw;
+    height: auto;
+    border-radius: 10px;
     border: none;
+    box-shadow: 0 5px 15px grey;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px;
+    margin: 8px;
+    background-color: white;
     transition: 0.3s ease;
-    font-weight: 700;
-    position: relative;
+    font-size: 18px;
+    font-weight: bold;
+}
+.chooselevel button img{
+    width: 40%;
+    padding-bottom: 5px;
 }
 .chooselevel button:hover{
     transform: scale(1.1);
@@ -49,6 +75,6 @@
 }
 @media screen and (max-width: 700px) {
     .chooselevel button {
-        width: 50%;
+        width: 33vw;
     }
 }

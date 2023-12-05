@@ -5,8 +5,8 @@ import {WordsJSON} from "../../data/wordsJSON";
 const Definitions = () => {
 
     return (
-        <div>
-            <h2> WORDS </h2>
+        <div className="words-bg">
+            <div className="chooselevel">     <h1> DEFINITIONS </h1>
             <div className="container-words">
                 {WordsJSON.map((item, index) => {
                     return(
@@ -15,7 +15,7 @@ const Definitions = () => {
                 })}
 
             </div>
-
+            </div>
 
         </div>
     )

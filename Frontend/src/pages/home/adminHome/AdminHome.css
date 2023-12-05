@@ -1,9 +1,10 @@
 .admin-home{
-    margin-top: 60px;
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    padding: 5px;
+    top:0;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url("https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
 }
 h1{
     font-size: 20px;
@@ -32,7 +33,7 @@ h1{
     width: 200px;
     /*width: 100%;*/
     height: 220px;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.68);
     box-shadow: 1px 5px 15px grey;
     padding: 5px;
     margin: 5px;
@@ -42,13 +43,13 @@ h1{
     color: black;
 }
 .admin-cards-2 img{
-    width: 50%;
+    width: 30%;
     height: auto;
     margin-bottom: 30px;
 }
 .first-column{
     width: 20vw;
-    height: auto;
+    height: 220px;
     /*background-color: green;*/
 }
 .second-column{
@@ -65,8 +66,8 @@ h1{
     justify-content: center;
     /*width: 25vw;*/
     /*width: 100%;*/
-    height: auto;
-    background-color: white;
+    height: 220px;
+    background-color: transparent;
     box-shadow: 1px 5px 15px grey;
     padding: 5px;
     margin: 5px;
@@ -88,7 +89,7 @@ h1{
 }
 .admin-card:hover,
 .admin-cards-2:hover{
-    background-color: #eae9e9;
+    background-color: white;
     transform: scale(1.01);
 }
 
@@ -96,4 +97,19 @@ h1{
     .admin{
         width: 33vh;
     }
+}
+
+.box-admin{
+    margin-top: 8vh;
+    position: absolute;
+    width: 80vw;
+    height: 90vh;
+    left: 10vw;
+    /*border-radius: 15px;*/
+    background: linear-gradient(217deg, rgba(250, 250, 250, 0.8), rgba(255,0,0,0) 70.71%),
+    linear-gradient(127deg, rgba(183, 183, 190, 0.56), rgba(0,255,0,0) 70.71%),
+    linear-gradient(336deg, rgba(192, 189, 189, 0.8), rgba(0,0,255,0) 70.71%);  opacity: 1;
+    box-shadow: 0 5px 10px #2e2e34;
+    display: flex;
+    flex-direction: row;
 }

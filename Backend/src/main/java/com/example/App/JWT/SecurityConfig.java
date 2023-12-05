@@ -50,7 +50,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
                 .csrf().disable()
                 .authorizeRequests()
 //                .antMatchers("/user/all").authenticated()  // MICHAŁ MÓWIŁ ŻEBY DOPISAĆ
-                .antMatchers("/user/login","/user/signup","/user/forgotPassword")
+                .antMatchers("/user/login","/user/signup","/user/forgotPassword", "/user/counter")
                 .permitAll()
                 .anyRequest()
                 .authenticated()

@@ -1,0 +1,40 @@
+.cardRow-grammar {
+    width: 90%;
+    margin-top: 10vh;
+    /*overflow-x: auto;*/
+    padding: 10px;
+    /*scroll-behavior: smooth;*/
+    /*overflow-y: hidden;*/
+}
+
+.cardContainer-grammar {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 10px; /* Dodatkowy odstęp między kartami */
+}
+
+.scrollButtons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.scrollButton {
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.left {
+    transform: rotate(180deg);
+}
+
+.right {
+    transform: rotate(0);
+}
+@media screen and (max-width: 900px) {
+    .cardRow {
+        padding-bottom: 70px;
+    }
+}

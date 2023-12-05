@@ -1,0 +1,260 @@
+.bg-gradient-1{
+    /*background: linear-gradient(217deg, rgba(250, 250, 250, 0.99), rgba(255,0,0,0) 70.71%),*/
+    /*linear-gradient(127deg, rgb(183, 183, 190), rgba(0,255,0,0) 70.71%),*/
+    /*linear-gradient(336deg, rgb(192, 189, 189), rgba(0,0,255,0) 70.71%);  opacity: 1;*/
+    /*height: 130vh;*/
+}
+
+
+.page-cards{
+    /*width: 100vw;*/
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    object-fit: cover;
+    /*background-image: url("https://c4.wallpaperflare.com/wallpaper/179/419/789/abstract-blue-gradient-wallpaper-preview.jpg");*/
+    border-radius: 10px;
+}
+
+/*@media screen and (max-width: 900px) {*/
+/*    .page{*/
+/*        margin-top: -38%;*/
+/*    }*/
+/*}*/
+/*@media screen and (max-width: 700px) {*/
+/*    .page{*/
+/*margin-bottom: 0px;*/
+/*    }*/
+/*}*/
+/*@media screen and (max-width: 580px) {*/
+/*    .page{*/
+/*        margin-top: -50%;*/
+/*    }*/
+/*}*/
+.page-cards h1{
+    margin-top: 70px;
+    font-family: "Segoe UI", sans-serif;
+}
+.cards-box{
+    padding: 15px;
+    margin-top: -100px;
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    overflow-y: hidden;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.test-card {
+    display: inline-block;
+    transition: transform .2s;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 0.44rem;
+    cursor:pointer;
+    min-width:160px;
+    max-width:160px;
+    height:250px;
+    z-index:0;
+    border: 1px solid rgb(99, 99, 99);
+    margin-bottom: 30px;
+}
+.test-card:hover{
+        transform: scale(1.1);
+
+}
+
+
+.quiz{
+    width: 200px;
+    height: 160px;
+    position: absolute;
+    /*margin: 5px;*/
+    border-radius: 15px;
+    box-shadow: 0 5px 15px grey;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px;
+}
+.quiz h5{
+    color: black;
+    font-size: 16px;
+    margin: 5px;
+
+}
+.img{
+    width: 100%;
+    height: 70%;
+    border-radius: 10px;
+    position: relative;
+}
+/*.................*/
+.div1-quiz{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    color: white;
+    box-shadow: 1px 5px 15px #8593a2;
+
+}
+.div2-quiz-test {
+    position: absolute;
+    /*top: -150px;*/
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(0px);
+    /*object-fit: contain;*/
+}
+
+.div3-quiz{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+
+}
+.div4-quiz{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+}
+.div5-quiz{
+    margin-left: 10px;
+    grid-column: span 1 / auto;
+    margin-top: 5px;
+
+
+}
+.div6-quiz{
+    position: absolute;
+    top: 40%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: flex-start;
+    justify-content: center;
+    /*border: 1px solid greenyellow;*/
+    transition: 0.3s ease-in-out;
+}
+@media screen and (max-width: 900px) {
+    .div6-quiz {
+        left: 35%;
+    }
+    .div1-quiz, .div2-quiz, .div3-quiz{
+        height: 55vh;
+    }
+    .div2-quiz{
+        top: 0px;
+    }
+}
+@media screen and (max-width: 700px){
+    .div6-quiz{
+        left: 50%;
+    }
+    .div1-quiz, .div2-quiz, .div3-quiz{
+        height: 40vh;
+    }
+}
+.h1-div6-quiz{
+    color: white;
+    margin-top: 40px;
+    margin-bottom: 4px;
+    font-size: 28px;
+
+}
+.h2-div6-quiz{
+    color: white;
+    font-size: 20px;
+}
+.poster-quiz{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.photo-button-quiz{
+    width: 200px;
+    height: 56px;
+    margin-top: 10px;
+    border-radius: 3px;
+    border: 3px solid white;
+    background-color: transparent;
+    color: white;
+    box-shadow:0 1px 1px white;
+    font-family: "Segoe UI", sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+
+}
+.photo-button-quiz:hover {
+    /*background-color: rgba(255, 255, 255, 0.09);*/
+    background-color: white;
+    color: black;
+}
+.cardsImg1 {
+    height: 250px;
+    width: 100%;
+    background-size: contain;
+    background-image: url('../../../assets/level/a1.jpg');
+}
+.cardsImg2 {
+    height: 250px;
+    width: 100%;
+    background-size: contain;
+    background-image: url('../../../assets/level/a2.jpg');
+}
+.cardsImg3 {
+    height: 250px;
+    width: 100%;
+    background-size: contain;
+    background-image: url('../../../assets/level/b1.jpg');
+
+}
+.cardsImg4 {
+    height: 250px;
+    width: 100%;
+    background-size: contain;
+    background-image: url('../../../assets/level/b2.jpg');
+}
+.cardsImg5 {
+    height: 250px;
+    width: 100%;
+    background-image: url('../../../assets/level/c1.jpg');
+    background-size: contain;
+}
+.cardsImg6 {
+     height: 250px;
+     width: 100%;
+     object-fit: cover;
+    background-size: contain;
+     background-image: url('../../../assets/level/c2.jpg');
+ }
+.test-cardsOverlay {
+    position: absolute;
+    padding: 0 1rem 1rem 1rem;
+    bottom: 0px;
+    height: 290px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: flex-end;
+    background-image: linear-gradient(rgb(0,0,0,0), rgb(0,0,0,1));
+    transition: opacity .2s;
+    opacity: 1;
+}

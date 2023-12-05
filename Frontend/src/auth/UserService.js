@@ -5,8 +5,10 @@ const API_URL = "http://localhost:8080/user/";
 
 class UserService {
 
+
     // OBA CHYBA NIE DZIALAJA
     // !!!!!!!!!!!!!!!!!!!1
+
 
     getAll(){
         return axios.get(API_URL + 'user', { headers: AuthHeader() });

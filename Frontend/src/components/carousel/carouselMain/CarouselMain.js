@@ -15,7 +15,7 @@ const CarouselMain = () => {
 
 
     return (
-        <PhotoMain photo={Photos[index]} />
+            <PhotoMain photo={Photos[index]} />
     );
 }
 

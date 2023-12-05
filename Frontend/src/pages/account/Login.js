@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from 'axios';
 import "../../components/form/Forms.css";
+import "./SignUp.css"
 import { Link } from "react-router-dom";
 import jwt_decode from "jwt-decode";
 
@@ -9,9 +10,9 @@ import jwt_decode from "jwt-decode";
     ZROBIĆ TAK ŻEBY STRONA LOGOWANIE I REJESTRACJI NIE WŁĄCZAŁA SIĘ
     JAK JUŻ JEST ZALOGOWANY
     I ŻEBY SIĘ NIE DAŁO WPISAĆ /login
-
-
  */
+
+
 const Login = () => {
     const [account, setAccount] = useState({
         email: "",
@@ -52,7 +53,7 @@ const Login = () => {
                 if(decodedToken.role==="admin"){
                     window.location.assign("http://localhost:3000/adminhome");
                 } else if(decodedToken.role === "user"){
-                    window.location.assign("http://localhost:3000/userhome");
+                    window.location.assign("http://localhost:3000/exercises");
                 }
             })
             .catch((error) => {
@@ -72,7 +73,8 @@ const Login = () => {
     };
 
     return (
-        <div className="all">
+
+        <div className="all-login">
             <div className="form-box">
                 <form className="form" onSubmit={handleSubmit}>
                     <i className="fas fa-user"></i>

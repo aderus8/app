@@ -1,0 +1,132 @@
+.test-bg{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    top: 0vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url("https://img.freepik.com/darmowe-zdjecie/3d-grunge-pokoju-wnetrze-z-swiatlem-reflektorow-i-dymnym-atmosfery-tlem_1048-11333.jpg?t=st=1701032252~exp=1701032852~hmac=d08314bc55c3ece9d92a23e498c5f7002050dbb44bb2c888d29f68f13c378a0b");
+}
+
+.test-result-page{
+    /*background-image: url("https://images.unsplash.com/photo-1527871369852-eb58cb2b54e2?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");*/
+    margin-top: 0px;
+    width: 550px;
+    height: 420px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /*box-shadow: 0 5px 15px lightgray;*/
+}
+/*https://i.pinimg.com/564x/2f/c4/8a/2fc48af8fb7b75d68265425e3ee1bc3d.jpg*/
+.test-box{
+    margin-top: 25vh;
+    /*position: absolute;*/
+    margin-left: 60vw;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.42);
+    padding: 30px;
+}
+.test-result-page h3{
+    margin: 8px;
+}
+.question-place-test{
+    margin-top: 0px;
+    width: 550px;
+    height: 420px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /*box-shadow: 0 5px 15px lightgray;*/
+}
+.test-buttons{
+    display: flex;
+    flex-direction: row;
+}
+.question-place-test h2{
+    margin-bottom: 20px;
+}
+.buttons{
+    width: 80%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+.question-place button{
+    width: 80%;
+    height: 15%;
+    margin: 8px;
+    border-radius: 15px;
+    box-shadow: 0 2px 5px grey;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.question-place button:active,
+.question-place button:focus {
+    background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
+    color: white;
+}
+.question-place button:hover {
+    background-image: radial-gradient(100% 100% at 100% 0, #66d9fa 0, #6072fa 100%);
+}
+
+
+
+.next-button{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 20px;
+    width: 70%;
+}
+.next-button button{
+    height: 100%;
+    box-shadow: 0 2px 5px grey;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.next-button button:active,
+.next-button button:focus {
+    background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
+    color: white;
+}
+@media
+only screen and (max-width: 600px) {
+
+    .question-place{
+        margin-top: 10vh;
+        width: 100%;
+        height: 80vh;
+        box-shadow: none;
+
+    }
+    .buttons{
+        width: 100%;
+        height: 60%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .next-button{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 10px;
+        width: 80%;
+        height:5vh;
+    }
+    .question-place h2{
+        margin: 5px;
+    }
+
+}
