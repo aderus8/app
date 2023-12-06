@@ -91,6 +91,7 @@ const Navbar = ({isSide, onSideMenuToggle}) => {
         setLoggedUser('');
         setRole("guest");
         setUser([]);
+        window.location.reload();
         navigate("/");
     }
 

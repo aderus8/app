@@ -6,6 +6,31 @@
     height: 100vh;
     padding: 80px 20px;
 }
+.all-box-game h1{
+    width: 100%;
+
+}
+.all-box-game{
+    /*margin-top: 10px;*/
+    /*box-shadow: 0px 5px 15px grey;*/
+    height: auto;
+    width: 100%;
+    display: flex;
+    overflow-y: hidden;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 20px;
+    /*background-image: url("https://media.istockphoto.com/id/1088991402/photo/blue-gradient-soft-background.jpg?s=612x612&w=0&k=20&c=FlPrTdoRXyYR9EwEAcXGiB_XvJEzl2HcNYyVG7iUOWE=");*/
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    /*background: linear-gradient(217deg, rgb(125, 182, 252), rgba(255,0,0,0) 70.71%),*/
+    /*linear-gradient(127deg, rgb(95, 156, 232), rgba(0,255,0,0) 70.71%),*/
+    /*linear-gradient(336deg, rgb(167, 201, 239), rgba(0,0,255,0) 70.71%);  opacity: 1;*/
+    padding-top: 30px;
+    margin-bottom: 30px;
+}
 .game-box{
     top: 10vh;
     margin-top: 79px;

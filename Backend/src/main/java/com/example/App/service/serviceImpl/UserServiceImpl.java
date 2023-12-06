@@ -1,7 +1,7 @@
 package com.example.App.service.serviceImpl;
 
 import com.example.App.EmailNAZWA;
-import com.example.App.JWT.JAKASNAZWAUserDetailsService;
+import com.example.App.JWT.CustomerUserDetailsService;
 import com.example.App.JWT.JwtAuthFilter;
 import com.example.App.JWT.JwtService;
 import com.example.App.dto.UserCounterDto;
@@ -38,7 +38,7 @@ public class UserServiceImpl implements UserService {
     @Autowired
     JwtAuthFilter jwtFilter;
     @Autowired
-    JAKASNAZWAUserDetailsService JAKASNAZWAUserDetailsService;
+    CustomerUserDetailsService CustomerUserDetailsService;
     @Autowired
     EmailNAZWA email;
 
@@ -123,10 +123,10 @@ public class UserServiceImpl implements UserService {
                     new UsernamePasswordAuthenticationToken(requestMap.get("email"), requestMap.get("password")));
 
             if(auth.isAuthenticated()){
-                if(JAKASNAZWAUserDetailsService.getUserDetail().getStatus().equalsIgnoreCase("true")){
+                if(CustomerUserDetailsService.getUserDetail().getStatus().equalsIgnoreCase("true")){
                     log.info("login chyba ok?");
                     return new ResponseEntity<String>("{\"token\":\"" +
-                            jwtService.generateToken(JAKASNAZWAUserDetailsService.getUserDetail().getEmail(), JAKASNAZWAUserDetailsService.getUserDetail().getRole()) + "\"}",
+                            jwtService.generateToken(CustomerUserDetailsService.getUserDetail().getEmail(), CustomerUserDetailsService.getUserDetail().getRole()) + "\"}",
                             HttpStatus.OK);
                 } else {
                     return new ResponseEntity<String>("{\"message\":\"" + "Wait for admin approval." + "\"}",

@@ -22,7 +22,7 @@ public class JwtAuthFilter extends OncePerRequestFilter {
     private JwtService jwtService;
 
     @Autowired
-    private JAKASNAZWAUserDetailsService service;
+    private CustomerUserDetailsService service;
 
     Claims claims = null;
     private String userName = null;

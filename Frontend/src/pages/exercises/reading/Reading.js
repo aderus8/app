@@ -1,9 +1,20 @@
 import React, {useEffect, useState} from "react";
 import "./Reading.css";
-import { textB1, questionsB1 } from "./readingQuestionsJSON";
+import {
+    textB1,
+    questionsB1,
+    textB1Spanish,
+    textB1French,
+    textB1Italian,
+    questionsB1Spanish,
+    questionsB1French,
+    questionsB1Italian
+} from "./readingQuestionsJSON";
 import {useNavigate} from "react-router-dom";
 import AuthService from "../../../auth/AuthService";
 import jwt_decode from "jwt-decode";
+import {Languages} from "../../../components/card/Languages";
+import FlagCard from "../../../components/card/flagCard/FlagCard";
 
 const Reading = () => {
 
@@ -15,6 +26,8 @@ const Reading = () => {
     const [testLevel, setTestLevel] = useState("0");
     const [userEmail, setUserEmail] = useState("");
     const [isSaved, setIsSaved] = useState(false);
+    const [languageID, setLanguageID] = useState(0);
+
 
 
     useEffect(() => {
@@ -86,7 +99,7 @@ const Reading = () => {
     };
 
     const goHome = () => {
-        navigate("/");
+        navigate("/userhome");
     };
 
     const scrollToTop = () => {
@@ -100,17 +113,56 @@ const Reading = () => {
     return (
         <div className="reading-bg">
             <div className="reading-shadow">
-
+                <>
+                {languageID===0 && (
+                    <div className="all-box-reading">
+                        <h1> CHOOSE LANGUAGE </h1>
+                        {Languages.map((item, index) => {
+                            return(
+                                <FlagCard key={item.title} title={item.title} image={item.image} index={index} onClick={() => setLanguageID(item.description)}/>
+                            )
+                        })}
+                    </div>
+                )}
+                </>
+                {languageID!==0 && (
+                <>
                 {!showScore ? (
-                    <div className="reading-text">
-                    {/* Wyświetlenie tekstu */}
-                    {textB1.map((item, index) => (
-                        <p key={index}>{item.text}</p>
-                    ))}
-                </div> ) : ( <></> )}
+                    <div>
+                    <>
+                        {languageID===1 && (
+                            <div className="reading-text">
+                                {textB1.map((item, index) => ( <p key={index}>{item.text}</p> ))}
+                            </div>
+                        )}
+                    </>
+                    <>
+                        {languageID===2 && (
+                            <div className="reading-text">
+                                {textB1Spanish.map((item, index) => ( <p key={index}>{item.text}</p> ))}
+                            </div>
+                        )}
+                    </>
+                        <>
+                            {languageID===3 && (
+                                <div className="reading-text">
+                                    {textB1French.map((item, index) => ( <p key={index}>{item.text}</p> ))}
+                                </div>
+                            )}
+                        </>
+                        <>
+                            {languageID===4 && (
+                                <div className="reading-text">
+                                    {textB1Italian.map((item, index) => ( <p key={index}>{item.text}</p> ))}
+                                </div>
+                            )}
+                        </>
+                    </div>
+                ) : ( <></> )} </> )}
 
+
+                {showScore===true && (
                 <div className="reading-questions">
-                    {showScore ? (
                         <div className="reading-box">
                          <div className="reading-results">
                             <div>
@@ -131,47 +183,158 @@ const Reading = () => {
                              </div>
                          </div>
                         </div>
-                    ) : (
-                        // Wyświetlanie pytań
-                        questionsB1.map((questionSet, setIndex) => (
-                            <div key={setIndex} className="question-set">
-                                {questionSet.questions.map((question) => (
-                                    <div key={question.id} className="reading-question1">
-                                        <p className="question-reading">Question: {question.question}</p>
-                                        <ul>
-                                            {/* Wyświetlenie opcji odpowiedzi */}
-                                            {question.options.map((option, optionIndex) => (
-                                                <li key={optionIndex} style={{ listStyle: "none", padding: "3px" }}>
-                                                    <label>
-                                                        <input
-                                                            className="question-answer"
-                                                            type="radio"
-                                                            name={`question_${question.id}`}
-                                                            value={option}
-                                                            onChange={() =>
-                                                                handleAnswerSelection(question.id, option)
-                                                            }
-                                                            checked={
-                                                                selectedAnswers.find(
-                                                                    (answer) => answer.questionId === question.id
-                                                                )?.selectedOption === option
-                                                            }
-                                                        />
-                                                        {option}
-                                                    </label>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </div>
-                                ))}
-                                <div className="div-button">
-                                    <button style={{width: "auto", opacity: "1"}} className="button-signup" onClick={showResult}>SHOW RESULT</button>
+                    )}
+                </div>
+                )}
+
+
+                {languageID===1 && showScore!==true && (
+                    questionsB1.map((questionSet, setIndex) => (
+                        <div key={setIndex} className="question-set">
+                            {questionSet.questions.map((question) => (
+                                <div key={question.id} className="reading-question1">
+                                    <p className="question-reading">Question: {question.question}</p>
+                                    <ul>
+                                        {/* Wyświetlenie opcji odpowiedzi */}
+                                        {question.options.map((option, optionIndex) => (
+                                            <li key={optionIndex} style={{ listStyle: "none", padding: "3px" }}>
+                                                <label>
+                                                    <input
+                                                        className="question-answer"
+                                                        type="radio"
+                                                        name={`question_${question.id}`}
+                                                        value={option}
+                                                        onChange={() =>
+                                                            handleAnswerSelection(question.id, option)
+                                                        }
+                                                        checked={
+                                                            selectedAnswers.find(
+                                                                (answer) => answer.questionId === question.id
+                                                            )?.selectedOption === option
+                                                        }
+                                                    />
+                                                    {option}
+                                                </label>
+                                            </li>
+                                        ))}
+                                    </ul>
                                 </div>
-                            </div>
-                        ))
+                            ))}
+                        </div>
+                    ))
+                )}
+                {languageID===2 && showScore!==true && (
+                    questionsB1Spanish.map((questionSet, setIndex) => (
+                        <div key={setIndex} className="question-set">
+                            {questionSet.questions.map((question) => (
+                                <div key={question.id} className="reading-question1">
+                                    <p className="question-reading">Question: {question.question}</p>
+                                    <ul>
+                                        {/* Wyświetlenie opcji odpowiedzi */}
+                                        {question.options.map((option, optionIndex) => (
+                                            <li key={optionIndex} style={{ listStyle: "none", padding: "3px" }}>
+                                                <label>
+                                                    <input
+                                                        className="question-answer"
+                                                        type="radio"
+                                                        name={`question_${question.id}`}
+                                                        value={option}
+                                                        onChange={() =>
+                                                            handleAnswerSelection(question.id, option)
+                                                        }
+                                                        checked={
+                                                            selectedAnswers.find(
+                                                                (answer) => answer.questionId === question.id
+                                                            )?.selectedOption === option
+                                                        }
+                                                    />
+                                                    {option}
+                                                </label>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            ))}
+                        </div>
+                    ))
+                )}
+                {languageID===3 && showScore!==true && (
+                    questionsB1French.map((questionSet, setIndex) => (
+                        <div key={setIndex} className="question-set">
+                            {questionSet.questions.map((question) => (
+                                <div key={question.id} className="reading-question1">
+                                    <p className="question-reading">Question: {question.question}</p>
+                                    <ul>
+                                        {/* Wyświetlenie opcji odpowiedzi */}
+                                        {question.options.map((option, optionIndex) => (
+                                            <li key={optionIndex} style={{ listStyle: "none", padding: "3px" }}>
+                                                <label>
+                                                    <input
+                                                        className="question-answer"
+                                                        type="radio"
+                                                        name={`question_${question.id}`}
+                                                        value={option}
+                                                        onChange={() =>
+                                                            handleAnswerSelection(question.id, option)
+                                                        }
+                                                        checked={
+                                                            selectedAnswers.find(
+                                                                (answer) => answer.questionId === question.id
+                                                            )?.selectedOption === option
+                                                        }
+                                                    />
+                                                    {option}
+                                                </label>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            ))}
+                        </div>
+                    ))
+                )}
+                {languageID===4 && showScore!==true && (
+                    questionsB1Italian.map((questionSet, setIndex) => (
+                        <div key={setIndex} className="question-set">
+                            {questionSet.questions.map((question) => (
+                                <div key={question.id} className="reading-question1">
+                                    <p className="question-reading">Question: {question.question}</p>
+                                    <ul>
+                                        {/* Wyświetlenie opcji odpowiedzi */}
+                                        {question.options.map((option, optionIndex) => (
+                                            <li key={optionIndex} style={{ listStyle: "none", padding: "3px" }}>
+                                                <label>
+                                                    <input
+                                                        className="question-answer"
+                                                        type="radio"
+                                                        name={`question_${question.id}`}
+                                                        value={option}
+                                                        onChange={() =>
+                                                            handleAnswerSelection(question.id, option)
+                                                        }
+                                                        checked={
+                                                            selectedAnswers.find(
+                                                                (answer) => answer.questionId === question.id
+                                                            )?.selectedOption === option
+                                                        }
+                                                    />
+                                                    {option}
+                                                </label>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            ))}
+                        </div>
+                    ))
+                )}
+
+                {languageID!==0 && showScore!==true && (
+                    <div className="div-button">
+                        <button style={{width: "auto", opacity: "1"}} className="button-signup" onClick={showResult}>SHOW RESULT</button>
+                    </div>
                     )}
 
-                </div>
             </div>
         </div>
     );
