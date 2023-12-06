@@ -24,6 +24,7 @@ import Game from "./pages/exercises/game/Game";
 import AuthService from "./auth/AuthService";
 import jwt_decode from "jwt-decode";
 import AddNew from "./pages/words/AddNew";
+import Pronunciation from "./pages/exercises/pronunciation/Pronunciation";
 
 function App() {
 
@@ -207,6 +208,10 @@ function App() {
                           <ProtectedAdminRoute>
                               <AddNew/>
                           </ProtectedAdminRoute>}/>
+                      <Route path="/pro" element={
+                          <ProtectedUserRoute>
+                              <Pronunciation/>
+                          </ProtectedUserRoute>}/>
              </Routes>
           </div>
       </>
