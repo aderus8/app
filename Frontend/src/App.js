@@ -23,6 +23,7 @@ import Others from "./pages/others/Others";
 import Game from "./pages/exercises/game/Game";
 import AuthService from "./auth/AuthService";
 import jwt_decode from "jwt-decode";
+import AddNew from "./pages/words/AddNew";
 
 function App() {
 
@@ -201,6 +202,11 @@ function App() {
                           <ProtectedUserRoute>
                               <Game/>
                           </ProtectedUserRoute>}/>
+
+                      <Route path="/addnewword" element={
+                          <ProtectedAdminRoute>
+                              <AddNew/>
+                          </ProtectedAdminRoute>}/>
              </Routes>
           </div>
       </>

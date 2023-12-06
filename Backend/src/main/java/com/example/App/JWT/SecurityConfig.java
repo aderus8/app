@@ -11,6 +11,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.web.cors.CorsConfiguration;
@@ -30,12 +31,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
         auth.userDetailsService(CustomerUserDetailsService);
     }
 
-    //ZMIENIĆ TO BCRYPT CHYBA
-//        return NoOpPasswordEncoder.getInstance();
+    //ZMIENIĆ TO BCRYPT CHYBA, nie dziala z bcrypt
 
     @Bean
     public PasswordEncoder passwordEncoder(){
-        return new BCryptPasswordEncoder();
+                return NoOpPasswordEncoder.getInstance();
+
+//        return new BCryptPasswordEncoder();
     }
 
     @Bean(name = BeanIds.AUTHENTICATION_MANAGER)

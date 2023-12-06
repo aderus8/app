@@ -19,21 +19,13 @@ const AdminHome = () => {
     }, []);
 
 
-    // const countUsers = ()=>{
-    //     axios.get(API_URL + 'counter')
-    //         .then(response => {
-    //             setUserCounter(response.data);
-    //         })
-    // }
-
-
 
     return (
 
         <div className="admin-home">
             <div className="box-admin">
                 <div className="first-column">
-                    <Link to={"/account"} className="admin-card">
+                    <Link to={"/account"} className="admin-cards-2">
                         <img src={require('../../../assets/icons/admin.jpg')}/>
                         <h2> {account.role.toUpperCase()}</h2>
                         {/*<h6> {account.sub} </h6>*/}
@@ -61,6 +53,14 @@ const AdminHome = () => {
                             <div className="admin-cards-2">
                                 <img src={require('../../../assets/icons/blueGradient/quiz.png')}/>
                                 <h2> Quizy </h2>
+                            </div>
+                        </Link>
+
+
+                        <Link to={"/addnewword"}>
+                            <div className="admin-cards-2">
+                                <img src={require('../../../assets/icons/blueGradient/approval.png')}/>
+                                <h2> Dodaj </h2>
                             </div>
                         </Link>
                     </div>
