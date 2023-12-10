@@ -12,6 +12,12 @@ export const TypesOfExercises = [
         image:"https://images.unsplash.com/photo-1553481187-be93c21490a9?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
+        title: "Pronunciation",
+        url: "/pro",
+        description: "",
+        image:"https://images.unsplash.com/photo-1531651008558-ed1740375b39?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
         title: "Definitions",
         url: "/definitions",
         description: "",
@@ -29,12 +35,12 @@ export const TypesOfExercises = [
         description: "",
         image: "https://s.tvp.pl/images/d/d/3/uid_dd37c4c3f35a40059967dc4314c01623_width_500_play_0_pos_0_gs_0_height_281.jpg"
     },
-    {
-        title: "Test",
-        url: "/tests",
-        description: "",
-        image: "https://images.unsplash.com/photo-1508014924734-d75124b0f402?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1176&q=80"
-    },
+    // {
+    //     title: "Test",
+    //     url: "/tests",
+    //     description: "",
+    //     image: "https://images.unsplash.com/photo-1508014924734-d75124b0f402?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1176&q=80"
+    // },
 
 
 

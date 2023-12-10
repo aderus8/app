@@ -104,7 +104,9 @@ const AddNew = () => {
             </div>
             )}
 
-            <div className="addnew-list">
+            {isAdded===false && (
+
+                <div className="addnew-list">
                 <button style={{marginLeft: "42vw", marginBottom: "20px", width: "220px"}} className="button-signup" onClick={() => setIsAdded(true)}> ADD NEW WORD </button>
                 <div className="add-word-list-container">
                     <h1>WORD LIST</h1>
@@ -164,7 +166,7 @@ const AddNew = () => {
                     </div>
                 </div>
             </div>
-
+                )}
             </div>
     )
 }

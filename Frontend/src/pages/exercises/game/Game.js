@@ -327,8 +327,8 @@ const Game = () => {
                 ))}
             </div> )}
 
-                {!languageID===0 && (
-            <div>
+                {!languageID==0 && (
+            <div >
                 <button className="button-signup" onClick={() => checkIfWordsAreCorrect()}> CHECK </button>
             </div>
                     )}

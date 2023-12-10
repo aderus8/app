@@ -60,7 +60,7 @@ const AdminHome = () => {
                         <Link to={"/addnewword"}>
                             <div className="admin-cards-2">
                                 <img src={require('../../../assets/icons/blueGradient/approval.png')}/>
-                                <h2> Dodaj </h2>
+                                <h2> Dodaj nowe słowo </h2>
                             </div>
                         </Link>
                     </div>

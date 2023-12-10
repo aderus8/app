@@ -1,6 +1,6 @@
 package com.example.App.service.serviceImpl;
 
-import com.example.App.EmailNAZWA;
+import com.example.App.EmailClass;
 import com.example.App.JWT.CustomerUserDetailsService;
 import com.example.App.JWT.JwtAuthFilter;
 import com.example.App.JWT.JwtService;
@@ -40,7 +40,7 @@ public class UserServiceImpl implements UserService {
     @Autowired
     CustomerUserDetailsService CustomerUserDetailsService;
     @Autowired
-    EmailNAZWA email;
+    EmailClass email;
 
     @Override
     public ResponseEntity<String> signUp(Map<String, String> requestMap) {
@@ -60,7 +60,7 @@ public class UserServiceImpl implements UserService {
     //SPRAWDZIĆ CZY TO NA PEWNO DOBRZE DZIAŁA !!!!!!!!!!
     // TO NIE DZIAŁA
     // ALE CHYBA JUŻ DZIAŁA
-    private boolean validateSignUpMap(Map<String, String> requestMap){
+    public boolean validateSignUpMap(Map<String, String> requestMap){
 //        if (requestMap.containsKey("name") && requestMap.containsKey("contactNumber")
 //                && requestMap.containsKey("email") && requestMap.containsKey("password")) {
 //            return true;

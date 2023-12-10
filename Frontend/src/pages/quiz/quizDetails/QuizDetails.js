@@ -110,12 +110,18 @@ const QuizDetails = ({quizCategory}) => {
         <div className="box">
             {questionIndex === questionsJSON.length-1 ? (
                 <div className="question-place">
-                    {isSaved === false ? (
-                        <button style={{margin: "10px"}} className="button-signup" onClick={saveQuizResultToLocalStorage}> SAVE</button>
+                    <h3 > Quiz category: {category}</h3>
+                    <h3 style={{margin: "20px"}}> Your result: {result} </h3>
+
+                    <div style={{display: "flex", flexDirection: "row"}} >
+
+                        {isSaved === false ? (
+                        <button style={{margin: "10px", width:"auto", height: "45px", borderRadius: "0px"}} className="button-signup" onClick={saveQuizResultToLocalStorage}> SAVE</button>
                     ) : <></>}
-                    <h3> Your result: {result} </h3>
-                    <button onClick={resetQuiz}> TRY AGAIN</button>
-                    <button onClick={goHome}> HOME</button>
+                        <button style={{margin: "10px", width:"auto", height: "45px",  borderRadius: "0px"}} className="button-signup" onClick={resetQuiz}> TRY AGAIN</button>
+                        <button style={{margin: "10px", width:"auto", height: "45px",  borderRadius: "0px"}} className="button-signup" onClick={goHome}> HOME</button>
+                    </div>
+
                 </div>
 
 
@@ -135,41 +141,5 @@ const QuizDetails = ({quizCategory}) => {
     );
 };
 
-
-    // return (
-    //     <div className="container">
-    //         <div> QuizDetails </div>
-
-
-
-            {/*{questionsJSON.map((item, quizCategory) => {*/}
-            {/*    if (quizCategory === questionIndex) {*/}
-            {/*        return (*/}
-            {/*            <>*/}
-            {/*                <div className="question-place">*/}
-            {/*                    <h2> {quizCategory + 1}/{questionsJSON.length}. {item.question}</h2>*/}
-            {/*                    <h4> result: {result}</h4>*/}
-            {/*                    <div className="buttons">*/}
-            {/*                        <button onClick={() => {validateAnswer(item.answers[0], item.correct_answer)}}> {item.answers[0]}</button>*/}
-            {/*                        <button onClick={() => {validateAnswer(item.answers[1], item.correct_answer)}}> {item.answers[1]}</button>*/}
-            {/*                        <button onClick={() => {validateAnswer(item.answers[2], item.correct_answer)}}> {item.answers[2]}</button>*/}
-            {/*                        <button onClick={() => {validateAnswer(item.answers[3], item.correct_answer)}}> {item.answers[3]}</button>*/}
-
-            {/*                    </div>*/}
-            {/*                    <div className="next-button">*/}
-            {/*                        <button onClick={handlePrevQuestion}>PREV</button>*/}
-            {/*                        <button onClick={handleNextQuestion}>NEXT</button>*/}
-            {/*                    </div>*/}
-            {/*                </div>*/}
-            {/*            </>*/}
-            {/*        )*/}
-            {/*    } else {*/}
-            {/*        return null;*/}
-            {/*    }*/}
-            {/*})}*/}
-
-{/*        </div>*/}
-{/*    )*/}
-{/*}*/}
 
 export default QuizDetails;

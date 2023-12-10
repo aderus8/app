@@ -59,9 +59,7 @@ const TestDetails = ({questions, level}) => {
     }
 
     const handlePrevQuestion = () => {
-        if(questionIndex>0) {
-            setQuestionIndex(questionIndex - 1);
-        }
+        alert("You can't go back to the previous question")
     }
 
     const validateAnswer = (yourAnswer, correctAnswer) => {

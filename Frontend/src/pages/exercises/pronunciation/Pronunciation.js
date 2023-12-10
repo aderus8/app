@@ -42,7 +42,7 @@ const Pronunciation = () => {
             result: points
         };
 
-        const storedProResults = JSON.parse(localStorage.getItem("userProResults")) || {};
+        const storedProResults = JSON.parse(localStorage.getItem("userExResults")) || {};
         const updatedProResults = {
             ...storedProResults,
             [userEmail]: [...(storedProResults[userEmail] || []), proResultData]
