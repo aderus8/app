@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import "./Account.css";
 import AuthService from "../../auth/AuthService";
 import jwt_decode from "jwt-decode";
+import jsPDF from "jspdf";
 
 
 const Account = () => {
@@ -43,6 +44,35 @@ const Account = () => {
         setRole(decoded.role);
         setEmail(decoded.sub);
     }, [] );
+
+
+
+    const generatePDF = () => {
+        const doc = new jsPDF();
+
+        doc.text(`Email: ${email}`, 20, 20);
+        doc.text(`Role: ${role}`, 20, 30);
+
+        let y = 60;
+        testResults.forEach((testResult, index) => {
+            y += 10;
+            doc.text(`${index + 1}. Type: ${testResult.testType}, Level: ${testResult.level}, Result: ${testResult.result}`, 20, y);
+        });
+
+        doc.text("Quiz Results:", 20, y + 20);
+        quizResults.forEach((quizResult, index) => {
+            y += 10;
+            doc.text(`${index + 1}. Type: ${quizResult.quizType}, Category: ${quizResult.category}, Result: ${quizResult.result}`, 20, y + 20);
+        });
+
+        doc.text("Exercises Results:", 20, y + 40);
+        exResults.forEach((exResult, index) => {
+            y += 10;
+            doc.text(`${index + 1}. Type: ${exResult.what}, Exercise Type: ${exResult.exType}, Result: ${exResult.result}`, 20, y + 40);
+        });
+
+        doc.save("user_results.pdf");
+    };
 
     return(
         <div className="account-page">
@@ -123,6 +153,8 @@ const Account = () => {
                             </table>
                         </div>
                     </div>
+                    <button style={{width: "400px", alignSelf:"center"}} className="button-signup" onClick={generatePDF}>Generuj PDF w wynikami </button>
+
                 </div>
             </div>
         </div>
