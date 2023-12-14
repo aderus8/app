@@ -9,7 +9,6 @@ export const SidebarMenu = [
     {
         title : "Exercises",
         url : "/exercises",
-        // cName : "nav-links",
     },
 
 
@@ -27,12 +26,20 @@ export const SidebarMenu = [
         url : "/reading",
     },
     {
-        title : "Quiz All",
+        title : "Quiz",
         url : "/quizpage",
     },
     {
         title : "Test",
         url : "/tests",
+    },
+    {
+        title : "Grammar",
+        url : "/grammar",
+    },
+    {
+        title : "Pron",
+        url : "/grammar",
     },
     {
         title : "Irregular Verbs",

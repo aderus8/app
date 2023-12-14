@@ -87,9 +87,8 @@ const Words = () => {
 
 export default Words;
 
-
+//
 // const initialWords = [
-// Angielski
 //     { id: 1, word: 'prolific', translation: 'produktywny', languageId: '1', level: 'C2' },
 //     { id: 2, word: 'ubiquitous', translation: 'wszechobecny', languageId: '1', level: 'C2' },
 //     { id: 3, word: 'ephemeral', translation: 'efemeryczny', languageId: '1', level: 'C2' },
@@ -101,7 +100,6 @@ export default Words;
 //     { id: 9, word: 'cogent', translation: 'przekonujący', languageId: '1', level: 'C2' },
 //     { id: 10, word: 'capricious', translation: 'kapryśny', languageId: '1', level: 'C2' },
 //
-//     // Hiszpański
 //     { id: 11, word: 'eficiente', translation: 'wydajny', languageId: '2', level: 'C2' },
 //     { id: 12, word: 'perspicaz', translation: 'przenikliwy', languageId: '2', level: 'C2' },
 //     { id: 13, word: 'efímero', translation: 'efemeryczny', languageId: '2', level: 'C2' },
@@ -113,7 +111,6 @@ export default Words;
 //     { id: 19, word: 'coherente', translation: 'spójny', languageId: '2', level: 'C2' },
 //     { id: 20, word: 'caprichoso', translation: 'kapryśny', languageId: '2', level: 'C2' },
 //
-//     // Francuski
 //     { id: 21, word: 'prolifique', translation: 'produktywny', languageId: '3', level: 'C2' },
 //     { id: 22, word: 'ubiquitaire', translation: 'wszechobecny', languageId: '3', level: 'C2' },
 //     { id: 23, word: 'éphémère', translation: 'efemeryczny', languageId: '3', level: 'C2' },
@@ -125,7 +122,6 @@ export default Words;
 //     { id: 29, word: 'convaincant', translation: 'przekonujący', languageId: '3', level: 'C2' },
 //     { id: 30, word: 'capricieux', translation: 'kapryśny', languageId: '3', level: 'C2' },
 //
-//     // Włoski
 //     { id: 31, word: 'prolifico', translation: 'produktywny', languageId: '4', level: 'C2' },
 //     { id: 32, word: 'ubiquitario', translation: 'wszechobecny', languageId: '4', level: 'C2' },
 //     { id: 33, word: 'effimero', translation: 'efemeryczny', languageId: '4', level: 'C2' },
@@ -146,7 +142,6 @@ export default Words;
 //     { id: 49, word: 'plausibility', translation: 'wiarygodność', languageId: '1', level: 'C1' },
 //     { id: 50, word: 'cogency', translation: 'siła przekonywania', languageId: '1', level: 'C1' },
 //
-//     // Hiszpański
 //     { id: 51, word: 'competente', translation: 'kompetentny', languageId: '2', level: 'C1' },
 //     { id: 52, word: 'ubiquidad', translation: 'wszechobecność', languageId: '2', level: 'C1' },
 //     { id: 53, word: 'transitorio', translation: 'przelotny', languageId: '2', level: 'C1' },
@@ -157,7 +152,6 @@ export default Words;
 //     { id: 58, word: 'plausibilidad', translation: 'wiarygodność', languageId: '2', level: 'C1' },
 //     { id: 59, word: 'coherencia', translation: 'spójność', languageId: '2', level: 'C1' },
 //
-//     // Francuski
 //     { id: 60, word: 'compétent', translation: 'kompetentny', languageId: '3', level: 'C1' },
 //     { id: 61, word: 'ubiquité', translation: 'wszechobecność', languageId: '3', level: 'C1' },
 //     { id: 62, word: 'transitoire', translation: 'przelotny', languageId: '3', level: 'C1' },
@@ -168,7 +162,6 @@ export default Words;
 //     { id: 67, word: 'plausibilité', translation: 'wiarygodność', languageId: '3', level: 'C1' },
 //     { id: 68, word: 'cohérence', translation: 'spójność', languageId: '3', level: 'C1' },
 //
-//     // Włoski
 //     { id: 69, word: 'competente', translation: 'kompetentny', languageId: '4', level: 'C1' },
 //     { id: 70, word: 'ubiquità', translation: 'wszechobecność', languageId: '4', level: 'C1' },
 //     { id: 71, word: 'transitorio', translation: 'przelotny', languageId: '4', level: 'C1' },
@@ -188,7 +181,6 @@ export default Words;
 //     { id: 86, word: 'plausibility', translation: 'wiarygodność', languageId: '1', level: 'B2' },
 //     { id: 87, word: 'cogency', translation: 'siła przekonywania', languageId: '1', level: 'B2' },
 //
-//     // Hiszpański
 //     { id: 88, word: 'competente', translation: 'kompetentny', languageId: '2', level: 'B2' },
 //     { id: 89, word: 'ubiquidad', translation: 'wszechobecność', languageId: '2', level: 'B2' },
 //     { id: 90, word: 'transitorio', translation: 'przelotny', languageId: '2', level: 'B2' },
@@ -198,6 +190,10 @@ export default Words;
 //     { id: 94, word: 'pulcritud', translation: 'piękno', languageId: '2', level: 'B2' },
 //     { id: 95, word: 'plausibilidad', translation: 'wiarygodność', languageId: '2', level: 'B2' },
 //     { id: 96, word: 'coherencia', translation: 'spójność', languageId: '2', level: 'B2' },
+//
+//
+//
+//
 //
 //     // Francuski
 //     { id: 97, word: 'compétent', translation: 'kompetentny', languageId: '3', level: 'B2' },
@@ -241,7 +237,6 @@ export default Words;
 //     { id: 132, word: 'plausibilidad', translation: 'wiarygodność', languageId: '2', level: 'B1' },
 //     { id: 133, word: 'coherencia', translation: 'spójność', languageId: '2', level: 'B1' },
 //
-//     // Francuski
 //     { id: 134, word: 'habile', translation: 'biegły', languageId: '3', level: 'B1' },
 //     { id: 135, word: 'omniprésent', translation: 'wszechobecny', languageId: '3', level: 'B1' },
 //     { id: 136, word: 'éphémère', translation: 'przelotny', languageId: '3', level: 'B1' },
@@ -252,7 +247,6 @@ export default Words;
 //     { id: 141, word: 'plausibilité', translation: 'wiarygodność', languageId: '3', level: 'B1' },
 //     { id: 142, word: 'cohérence', translation: 'spójność', languageId: '3', level: 'B1' },
 //
-//     // Włoski
 //     { id: 143, word: 'abile', translation: 'biegły', languageId: '4', level: 'B1' },
 //     { id: 144, word: 'onnipresente', translation: 'wszechobecny', languageId: '4', level: 'B1' },
 //     { id: 145, word: 'effimero', translation: 'przelotny', languageId: '4', level: 'B1' },
@@ -272,6 +266,10 @@ export default Words;
 //     { id: 159, word: 'beauty', translation: 'piękno', languageId: '1', level: 'A2' },
 //     { id: 160, word: 'plausibility', translation: 'wiarygodność', languageId: '1', level: 'A2' },
 //     { id: 161, word: 'coherence', translation: 'spójność', languageId: '1', level: 'A2' },
+//
+//
+//
+//
 //
 //     // Hiszpański
 //     { id: 162, word: 'básico', translation: 'podstawowy', languageId: '2', level: 'A2' },

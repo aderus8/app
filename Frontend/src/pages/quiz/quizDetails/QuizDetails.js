@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from "react";
 import "./QuizDetails.css";
-// import {questionsJSON} from "../../../data/questionsJSON";
 import Question from "../Question";
 import {useNavigate} from "react-router-dom";
 import { questionsFoodJSON,questionsCultureJSON,questionsHealthJSON,questionsMusicJSON,questionsSportJSON,questionsTechnologyJSON,questionsWorldJSON,questionsLiteratureJSON} from "../../../data/questionsJSON";

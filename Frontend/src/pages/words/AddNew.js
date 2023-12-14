@@ -1,24 +1,41 @@
 import React, {useEffect, useState} from "react";
 import "./AddNew.css";
 import {Languages} from "../../components/card/Languages";
+import axios from "axios";
+import authHeader from "../../auth/AuthHeader";
 
 const AddNew = () => {
     const [word, setWord] = useState('');
     const [translation, setTranslation] = useState('');
     const [level, setLevel] = useState('A1');
     const [words, setWords] = useState([]);
-    const [languageID, setLanguageID] = useState('1');
+    const [languageID, setLanguageID] = useState("1");
     const [isAdded, setIsAdded] = useState(false);
+    const [wordsFromDB, setWordsFromDB] = useState([]);
+    const [lastWordID, setLastWordID] = useState();
 
 
 
     useEffect(() => {
-
-        const wordsFromStorage = JSON.parse(localStorage.getItem('words')) || [];
-        setWords(wordsFromStorage);
-        console.log("WFS: " + wordsFromStorage);
+        getWords();
+        // const wordsFromStorage = JSON.parse(localStorage.getItem('words')) || [];
+        // setWords(wordsFromStorage);
+        // console.log("WFS: " + wordsFromStorage);
     }, []);
 
+
+
+    const getWords = () => {
+        const axiosInstance = axios.create({headers: authHeader()});
+        axiosInstance.get('http://localhost:8080/word/all')
+            .then(response => {
+                setWordsFromDB(response.data);
+                setLastWordID(wordsFromDB.length-1);
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -28,31 +45,57 @@ const AddNew = () => {
             return;
         }
 
-        const newWord = {
-            id: words.length + 1,
-            word,
-            translation,
-            languageId: languageID,
-            level,
-        };
+        // const newWord = {
+        //     id: newId,
+        //     word,
+        //     translation,
+        //     languageId: languageID,
+        //     level,
+        // };
 
-        const updatedWords = [...words, newWord];
-        setWords(updatedWords);
-        localStorage.setItem('words', JSON.stringify(updatedWords));
+        axios.post("http://localhost:8080/word/add", {
+            "id": lastWordID + 1,
+            "languageId": languageID,
+            "level": level,
+            "translation": translation,
+            "word": word,
+        }, {
+            headers: authHeader()
+        })
+            .then((response) =>
+                getWords()
+    )
+            .catch((err) => console.log(err));
+
+        // const updatedWords = [...words, newWord];
+        // setWords(updatedWords);
+        // localStorage.setItem('words', JSON.stringify(updatedWords));
 
 
         setWord('');
         setTranslation('');
         setLevel('A1');
-        setLanguageID('1'); // Domyślnie ustawiany na angielski czyli 1
+        setLanguageID("1"); // Domyślnie ustawiany na angielski czyli 1
         setIsAdded(false);
     };
 
 
+    // const handleDelete = (id) => {
+    //     const updatedWords = words.filter((item) => item.id !== id);
+    //     setWords(updatedWords);
+    //     localStorage.setItem('words', JSON.stringify(updatedWords));
+    // };
+
     const handleDelete = (id) => {
-        const updatedWords = words.filter((item) => item.id !== id);
-        setWords(updatedWords);
-        localStorage.setItem('words', JSON.stringify(updatedWords));
+        axios.delete(`http://localhost:8080/word/delete/${id}`,
+            { headers: authHeader() })
+            .then((response) => {
+                getWords();
+                console.log(`Usunięto słowo o ID: ${id}`);
+            })
+            .catch((error) => {
+                console.error(`Błąd podczas usuwania słowa o ID: ${id}`, error);
+            });
     };
 
 
@@ -131,7 +174,9 @@ const AddNew = () => {
                                     <p> delete </p>
                                 </div>
                         </div>
-                        {words.map((item) => (
+
+                        {/*{words.map((item) => (*/}
+                        {wordsFromDB.map((item) => (
                             <div className="add-word-item" key={item.id}>
                                 <div className="add-word-column">
                                     <p>{item.id}</p>

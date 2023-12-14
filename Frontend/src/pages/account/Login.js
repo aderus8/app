@@ -5,14 +5,6 @@ import "./SignUp.css"
 import { Link } from "react-router-dom";
 import jwt_decode from "jwt-decode";
 
-
-/*
-    ZROBIĆ TAK ŻEBY STRONA LOGOWANIE I REJESTRACJI NIE WŁĄCZAŁA SIĘ
-    JAK JUŻ JEST ZALOGOWANY
-    I ŻEBY SIĘ NIE DAŁO WPISAĆ /login
- */
-
-
 const Login = () => {
     const [account, setAccount] = useState({
         email: "",

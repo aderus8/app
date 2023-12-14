@@ -1,10 +1,8 @@
 import React, {useRef, useState} from "react";
 import "./QuizPage.css";
 import "../../../components/photos/photoShadow/PhotoShadow.css";
-import CardRow from "../../../components/row/cardRow/CardRow";
 import {cardsJSON} from "../../../components/row/CardsJSON";
 import "./QuizPage.css"
-import { questionsFoodJSON,questionsCultureJSON,questionsHealthJSON,questionsMusicJSON,questionsSportJSON,questionsTechnologyJSON,questionsWorldJSON,questionsLiteratureJSON} from "../../../data/questionsJSON";
 import Card from "../../../components/card/card/Card";
 import QuizDetails from "../quizDetails/QuizDetails";
 
