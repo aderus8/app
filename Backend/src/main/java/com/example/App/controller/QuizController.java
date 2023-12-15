@@ -62,6 +62,7 @@ public class QuizController {
         return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
+    @CrossOrigin
     @GetMapping(path = "/all")
     public ResponseEntity<List<QuizDto>> getAllQuizzes() {
         try {

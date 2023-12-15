@@ -45,9 +45,9 @@ public class QuizServiceImpl implements QuizService {
             quiz.setQuestion((String) quizData.get("question"));
         }
 
-        if (quizData.containsKey("answers")) {
-            quiz.setAnswers((List<String>) quizData.get("answers"));
-        }
+//        if (quizData.containsKey("answers")) {
+//            quiz.setAnswers((List<String>) quizData.get("answers"));
+//        }
 
         if (quizData.containsKey("correct_answer")) {
             quiz.setCorrectAnswer((String) quizData.get("correct_answer"));
@@ -57,6 +57,21 @@ public class QuizServiceImpl implements QuizService {
             quiz.setLevel((String) quizData.get("level"));
         }
 
+        if (quizData.containsKey("category")) {
+            quiz.setCategory((String) quizData.get("category"));
+        }
+
+        if (quizData.containsKey("incorrect_answer1")) {
+            quiz.setIncorrectAnswer1((String) quizData.get("incorrect_answer1"));
+        }
+
+        if (quizData.containsKey("incorrect_answer2")) {
+            quiz.setIncorrectAnswer1((String) quizData.get("incorrect_answer2"));
+        }
+
+        if (quizData.containsKey("incorrect_answer3")) {
+            quiz.setIncorrectAnswer1((String) quizData.get("incorrect_answer3"));
+        }
 
         return quiz;
     }
@@ -120,9 +135,13 @@ public class QuizServiceImpl implements QuizService {
         QuizDto quizDto = new QuizDto();
         quizDto.setId(quiz.getId());
         quizDto.setQuestion(quiz.getQuestion());
-        quizDto.setAnswers(quiz.getAnswers());
+//        quizDto.setAnswers(quiz.getAnswers());
         quizDto.setCorrectAnswer(quiz.getCorrectAnswer());
         quizDto.setLevel(quiz.getLevel());
+        quizDto.setCategory(quiz.getCategory());
+        quizDto.setIncorrectAnswer1(quiz.getIncorrectAnswer1());
+        quizDto.setIncorrectAnswer2(quiz.getIncorrectAnswer2());
+        quizDto.setIncorrectAnswer3(quiz.getIncorrectAnswer3());
         return quizDto;
     }
 

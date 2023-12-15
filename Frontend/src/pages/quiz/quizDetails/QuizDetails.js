@@ -5,14 +5,11 @@ import {useNavigate} from "react-router-dom";
 import { questionsFoodJSON,questionsCultureJSON,questionsHealthJSON,questionsMusicJSON,questionsSportJSON,questionsTechnologyJSON,questionsWorldJSON,questionsLiteratureJSON} from "../../../data/questionsJSON";
 import AuthService from "../../../auth/AuthService";
 import jwt_decode from "jwt-decode";
+import axios from "axios";
+import authHeader from "../../../auth/AuthHeader";
 
 const QuizDetails = ({quizCategory}) => {
-    /* ZMIENIĆ TU DUŻO
-    * KOLEJNOŚĆ PYTAŃ I ODPOWIEDZI MA BYĆ LOSOWA
-    * INNY KOLOR PO POPRAWNEJ ODPOWIEDZI I NIEPOPRAWNEJ
-    * WYGLĄD WSZYSTKIEGO
-    * ŻEBY ODPOWIEDZI NIE BYŁY WYPISANE PO KOLEI
-    * */
+
     const [questionsJSON, setQuestionsJSON] = useState([questionsTechnologyJSON]);
     const navigate = useNavigate();
     const[questionIndex, setQuestionIndex] = useState(0);
@@ -41,14 +38,12 @@ const QuizDetails = ({quizCategory}) => {
         const currentUser = AuthService.getCurrentUserToken();
         if(currentUser) {
             const decodedToken = jwt_decode(localStorage.getItem("token"));
-            console.log("decodedToken: " + decodedToken);
             setUser(decodedToken);
             setUserEmail(decodedToken.sub);
-            console.log("user: " + user);
-            console.log("user email: " + userEmail);
             setCategory(quizCategory);
         }
     }, [] );
+
 
     const saveQuizResultToLocalStorage = () => {
         const quizResultData = {

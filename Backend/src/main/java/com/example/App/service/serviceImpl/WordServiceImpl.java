@@ -121,10 +121,7 @@ public class WordServiceImpl implements WordService {
         }
     }
 
-    // Metoda pomocnicza do konwersji danych Map<String, Object> na obiekt WordDto
     private WordDto convertToWordDto(Map<String, Object> wordData) {
-        // Implementacja konwersji z Map<String, Object> na WordDto
-        // Przykładowa implementacja
         Integer id = (Integer) wordData.get("id");
         String word = (String) wordData.get("word");
         String translation = (String) wordData.get("translation");

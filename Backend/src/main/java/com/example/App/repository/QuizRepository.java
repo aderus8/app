@@ -13,7 +13,7 @@ public interface QuizRepository extends JpaRepository<Quiz, Integer> {
     @Query("SELECT q FROM Quiz q WHERE q.id = :id")
     Quiz findQuizById(@Param("id") Integer id);
 
-    List<Quiz> findAll(); // Pobierz wszystkie quizy
+    List<Quiz> findAll();
 
 
 }
