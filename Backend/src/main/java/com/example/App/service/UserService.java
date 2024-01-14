@@ -2,7 +2,6 @@ package com.example.App.service;
 
 import com.example.App.dto.UserCounterDto;
 import com.example.App.dto.UserDto;
-import com.example.App.entity.User;
 import org.springframework.http.ResponseEntity;
 
 import java.util.List;

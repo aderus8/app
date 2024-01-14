@@ -135,7 +135,6 @@ public class QuizServiceImpl implements QuizService {
         QuizDto quizDto = new QuizDto();
         quizDto.setId(quiz.getId());
         quizDto.setQuestion(quiz.getQuestion());
-//        quizDto.setAnswers(quiz.getAnswers());
         quizDto.setCorrectAnswer(quiz.getCorrectAnswer());
         quizDto.setLevel(quiz.getLevel());
         quizDto.setCategory(quiz.getCategory());

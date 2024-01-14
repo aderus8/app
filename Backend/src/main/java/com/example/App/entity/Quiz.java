@@ -23,11 +23,6 @@ public class Quiz implements Serializable {
     @Column(name = "question")
     private String question;
 
-//    @ElementCollection
-//    @CollectionTable(name = "quiz_answers", joinColumns = @JoinColumn(name = "quiz_id"))
-//    @Column(name = "answer")
-//    private List<String> answers;
-
     @Column(name = "correct_answer")
     private String correctAnswer;
 

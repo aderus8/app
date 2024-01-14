@@ -55,17 +55,9 @@ public class UserServiceImpl implements UserService {
             exception.printStackTrace();
         }
         return new ResponseEntity<>("Something went wrong", HttpStatus.INTERNAL_SERVER_ERROR);
-   }    //ZWRÓĆIĆ DTO DO KONTROLERA A TU BEZ RESPONSE ENTITY
-
-    //SPRAWDZIĆ CZY TO NA PEWNO DOBRZE DZIAŁA !!!!!!!!!!
-    // TO NIE DZIAŁA
-    // ALE CHYBA JUŻ DZIAŁA
+   }
     public boolean validateSignUpMap(Map<String, String> requestMap){
-//        if (requestMap.containsKey("name") && requestMap.containsKey("contactNumber")
-//                && requestMap.containsKey("email") && requestMap.containsKey("password")) {
-//            return true;
-//        }
-//        return false;
+
         String name = requestMap.get("name");
         String email = requestMap.get("email");
         String contactNumber = requestMap.get("contactNumber");
@@ -90,21 +82,22 @@ public class UserServiceImpl implements UserService {
         return email.matches(emailRegex);
     }
 
-    private ResponseEntity<String> saveUser(Map<String, String> requestMap){
+    private ResponseEntity<String> saveUser(Map<String, String> requestMap) {
         User user = userRepository.findByEmailId(requestMap.get("email"));
-        if(Objects.isNull(user)){
+        if (Objects.isNull(user)) {
             userRepository.save(userMapper.convertMapToUser(requestMap));
             return ResponseEntity.ok("User successfully registered");
+        } else {
+            return new ResponseEntity<>("Email already exists", HttpStatus.BAD_REQUEST);
         }
-        return new ResponseEntity<>("Email already exists", HttpStatus.BAD_REQUEST);
     }
-// DTO MA BYĆ
-//  CZY TO RETURN PO JWTFILTER ADMIN JEST OK?
+
+
     @Override
     public ResponseEntity<List<UserDto>> getAllUser() {
         log.info("get all ");
         try{
-            if(jwtFilter.isAdmin()){ //TRZEBA ZROBIĆ MAPPER
+            if(jwtFilter.isAdmin()){
                 return new ResponseEntity<>(userRepository.getAllUser(), HttpStatus.OK);
             } else {
                 return new ResponseEntity<>(new ArrayList<>(),HttpStatus.UNAUTHORIZED);
@@ -184,8 +177,6 @@ public class UserServiceImpl implements UserService {
         return new ResponseEntity<>("Something went wrong", HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
-    //TO NIE DZIAŁA, POPRAWIĆ
-    // NIE WYSYŁA MAILA, BŁĄD JAKIŚ
     @Override
     public ResponseEntity<String> forgotPassword(Map<String, String> requestMap) {
         try{

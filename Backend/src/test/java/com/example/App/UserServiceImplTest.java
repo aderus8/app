@@ -1,7 +1,6 @@
 package com.example.App;
 
 import static org.junit.jupiter.api.Assertions.*;
-
 import com.example.App.service.serviceImpl.UserServiceImpl;
 import org.junit.jupiter.api.Test;
 import java.util.HashMap;
@@ -113,17 +112,3 @@ public class UserServiceImplTest {
         assertFalse(isValid);
     }
 }
-
-//    Opis testów jednostkowych dla UserServiceImpl:
-//
-//        Test poprawnego adresu email: Sprawdza, czy metoda validateSignUpMap zwraca true dla prawidłowego adresu email.
-//        Test niepoprawnego adresu email: Weryfikuje, czy metoda validateSignUpMap zwraca false dla nieprawidłowego adresu email.
-//        Test pustego adresu email: Sprawdza, czy metoda validateSignUpMap zwraca false dla pustego pola adresu email.
-//        Test poprawnego hasła: Weryfikuje, czy metoda validateSignUpMap zwraca true dla silnego hasła.
-//        Test słabego hasła: Sprawdza, czy metoda validateSignUpMap zwraca false dla słabego hasła.
-//        Test poprawnego numeru kontaktowego: Sprawdza, czy metoda validateSignUpMap zwraca true dla poprawnego numeru kontaktowego.
-//        Test niepoprawnego numeru kontaktowego: Weryfikuje, czy metoda validateSignUpMap zwraca false dla nieprawidłowego numeru kontaktowego.
-//        Test nullowego obiektu RequestMap: Sprawdza, czy metoda validateSignUpMap zwraca false dla nullowego obiektu RequestMap.
-//        Test pól null w obiekcie RequestMap: Weryfikuje, czy metoda validateSignUpMap zwraca false w przypadku nullowych pól w obiekcie RequestMap.
-//
-//        Te testy jednostkowe pomagają sprawdzić, czy metoda validateSignUpMap działa zgodnie z oczekiwaniami dla różnych scenariuszy danych wejściowych.

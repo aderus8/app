@@ -1,91 +1,141 @@
 package com.example.App;
 
-import com.example.App.controller.UserController;
-import com.example.App.dto.UserCounterDto;
-import com.example.App.dto.UserDto;
-import com.example.App.service.UserService;
-import org.junit.jupiter.api.BeforeEach;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.MediaType;
+import org.springframework.test.web.servlet.MockMvc;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.Mockito.*;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
+@SpringBootTest
+@AutoConfigureMockMvc
 class UserControllerTest {
 
-    private UserService userService;
-    private UserController userController;
+    @Autowired
+    private MockMvc mockMvc;
 
-    @BeforeEach
-    void setUp() {
-        userService = mock(UserService.class);
-        userController = new UserController(userService, null);
+    @Autowired
+    private ObjectMapper objectMapper;
+
+    private String loginAdminAndGetToken() throws Exception {
+        Map<String, String> adminCredentials = new HashMap<>();
+        adminCredentials.put("email", "agnieszka.derus@interia.pl");
+        adminCredentials.put("password", "haslo");
+
+        String response = mockMvc.perform(post("/user/login")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(adminCredentials)))
+                .andReturn().getResponse().getContentAsString();
+
+        JsonNode jsonResponse = objectMapper.readTree(response);
+        return jsonResponse.path("token").asText();
     }
 
-    // Testy dla metody signUp
+
 
     @Test
-    void signUp_ValidData_Success() {
-        // given
+    void signUp_ValidData_Success() throws Exception {
         Map<String, String> validData = new HashMap<>();
         validData.put("name", "John Doe");
-        validData.put("email", "john@example.com");
+        validData.put("email", "john12345@example.com");
         validData.put("contactNumber", "1234567890");
         validData.put("password", "strongPassword");
 
-        when(userService.signUp(validData)).thenReturn(ResponseEntity.ok("User successfully registered"));
-
-        // when
-        ResponseEntity<String> response = userController.signUp(validData);
-
-        // then
-        assertEquals(HttpStatus.OK, response.getStatusCode());
+        mockMvc.perform(post("/user/signup")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(validData)))
+                .andExpect(status().isOk())
+                .andExpect(content().string("User successfully registered"));
     }
 
     @Test
-    void signUp_InvalidData_BadRequest() {
-        // given
-        Map<String, String> invalidData = new HashMap<>();
-        // Test scenario with incomplete/invalid data for signUp method
-        // ... (fill in with invalid data)
-
-        when(userService.signUp(invalidData)).thenReturn(new ResponseEntity<>("Invalid data", HttpStatus.BAD_REQUEST));
-
-        // when
-        ResponseEntity<String> response = userController.signUp(invalidData);
-
-        // then
-        assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
+    void signUp_InvalidData_BadRequest() throws Exception {
+        mockMvc.perform(post("/user/signup")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("{\"name\":\"\",\"email\":\"invalid-email\",\"contactNumber\":\"1234567890\",\"password\":\"\"}"))
+                .andExpect(status().isBadRequest())
+                .andExpect(content().string("Invalid data"));
     }
-
-    // Testy dla metody login
 
     @Test
-    void login_ValidCredentials_Success() {
-        // given
-        Map<String, String> validCredentials = new HashMap<>();
-        validCredentials.put("email", "john@example.com");
-        validCredentials.put("password", "strongPassword");
-
-        // Implementacja testu dla poprawnych danych logowania
-        // ...
-
-        when(userService.login(validCredentials)).thenReturn(ResponseEntity.ok("Token"));
-
-        // when
-        ResponseEntity<String> response = userController.login(validCredentials);
-
-        // then
-        assertEquals(HttpStatus.OK, response.getStatusCode());
+    void signUp_EmptyData_BadRequest() throws Exception {
+        mockMvc.perform(post("/user/signup")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("{}")) // Puste ciało
+                .andExpect(status().isBadRequest())
+                .andExpect(content().string("Invalid data"));
     }
 
-    // Analogicznie dla pozostałych metod...
+    @Test
+    void login_ValidCredentials_Success() throws Exception {
+        mockMvc.perform(post("/user/login")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("{\"email\":\"agnieszka.derus@interia.pl\",\"password\":\"haslo\"}"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.token").isString());
+    }
 
-    // Testy dla pozostałych metod UserController
-    // ...
+    @Test
+    void login_InvalidCredentials_BadRequest() throws Exception {
+        mockMvc.perform(post("/user/login")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("{\"email\":\"invalid-email\",\"password\":\"weakPassword\"}"))
+                .andExpect(status().isBadRequest())
+                .andExpect(content().string("Bad credentials"));
+    }
+
+    @Test
+    void checkToken_Admin_Success() throws Exception {
+        String adminToken = loginAdminAndGetToken();
+
+        mockMvc.perform(get("/user/checkToken")
+                        .header("Authorization", "Bearer " + adminToken))
+                .andExpect(status().isOk())
+                .andExpect(content().string("true"));
+    }
+
+
+    @Test
+    void getAllUser_Admin_Success() throws Exception {
+        String adminToken = loginAdminAndGetToken();
+
+        mockMvc.perform(get("/user/all")
+                        .header("Authorization", "Bearer " + adminToken))
+                .andExpect(status().isOk());
+    }
+
+
+    @Test
+    void checkToken_NoToken_Forbidden() throws Exception {
+        mockMvc.perform(get("/user/checkToken"))
+                .andExpect(status().isForbidden())
+                .andExpect(jsonPath("$").doesNotExist()); // Oczekujemy, że nie ma treści ciała
+    }
+
+    @Test
+    void getAllUser_NoToken_Forbidden() throws Exception {
+        mockMvc.perform(get("/user/all"))
+                .andExpect(status().isForbidden());
+    }
+
+
+    @Test
+    void countUsers_Success() throws Exception {
+        mockMvc.perform(get("/user/counter"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.counter").isNumber());
+    }
+
+
+
+
 
 }

@@ -51,7 +51,6 @@ public class UserController {
         return new ResponseEntity<>("Something went wrong", HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
-    //ZMIENIC CHYBA TO LIST<USER>
     @GetMapping(path = "/all")
     public ResponseEntity<List<UserDto>> getAllUser() {
         log.info("all users");

@@ -14,20 +14,15 @@ import java.io.Serializable;
 @NamedQuery(name = "User.getAllAdmin", query = "select u.email from User u where u.role='admin'")
 
 @Data
-//: Adnotacja ta wskazuje, że klasa jest encją JPA, co oznacza, że ​​może być zapisana w relacyjnej bazie danych.
 @Entity
 @NoArgsConstructor
-// Adnotacja ta mówi Hibernate, implementacja JPA użyta tutaj, aby generować tylko aktualizacje SQL dla pól, które uległy zmianie.
 @DynamicUpdate
-// Adnotacja ta mówi Hibernate, aby generował tylko wstawienia SQL dla pól, które nie są puste.
 @DynamicInsert
 @Table(name = "user")
-//Ta linia deklaruje, że ​​klasa User może być serializowana, co oznacza, że ​​może być przekształcona w strumień bajtów i przesłana przez sieć lub przechowywana w pliku.
 public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-//  adnotacje @Id i @GeneratedValue wskazują, że pole id jest kluczem głównym tabeli user, a jego wartości będą automatycznie generowane przez bazę danych z wykorzystaniem strategii IDENTITY.
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
