@@ -167,3 +167,17 @@ Aplikacja zawiera interaktywne elementy, takie jak nagrania dźwiękowe, aby uł
   - 200: User password changed successfully
   - 401: Invalid old password
   - 500: Something went wrong during password change
+
+| Test Case ID | Opis | Kroki testowe | Oczekiwany wynik |
+|:-------------|:----:|:-------------:|:-----------------:|
+| TC_01 | Rejestracja nowego konta | 1. Otwórz stronę rejestracji. 2. Wprowadź poprawne dane rejestracyjne (unikalny email, hasło, itp.). 3. Sprawdź, czy konto zostało utworzone poprawnie. 4. Zaloguj się na nowo utworzone konto i sprawdź, czy dostęp do funkcji jest możliwy. | Konto zostaje pomyślnie utworzone, a użytkownik ma dostęp do funkcji po zalogowaniu. |
+| TC_02 | Logowanie istniejącym kontem | 1. Otwórz stronę logowania. 2. Wprowadź poprawne dane logowania (email, hasło). 3. Sprawdź, czy użytkownik jest pomyślnie zalogowany. | Pomyślne zalogowanie istniejącym kontem użytkownika. |
+| TC_03 | Przegląd dostępnych ćwiczeń | 1. Po zalogowaniu, przejdź do sekcji dostępnych ćwiczeń. 2. Sprawdź, czy lista ćwiczeń jest widoczna. 3. Otwórz jedno z ćwiczeń i sprawdź, czy interfejs jest czytelny. | Lista ćwiczeń jest widoczna, a interfejs ćwiczeń jest czytelny. |
+| TC_04 | Dodawanie nowego słówka przez administratora | 1. Zaloguj się jako administrator. 2. Przejdź do sekcji zarządzania słówkami. 3. Dodaj nowe słówko wraz z tłumaczeniem. 4. Sprawdź, czy słówko zostało pomyślnie dodane i jest widoczne dla użytkowników. | Słówko zostaje pomyślnie dodane i jest widoczne dla użytkowników. |
+| TC_05 | Usunięcie słówka przez administratora | 1. Zaloguj się na konto administratora. 2. Przejdź do sekcji zarządzania słówkami. 3. Znajdź konkretne słówko do usunięcia. 4. Wybierz opcję usuń słówko. 5. Potwierdź usunięcie słówka. 6. Sprawdź, czy słówko zostało pomyślnie usunięte i nie jest już widoczne w aplikacji dla użytkowników. | Słówko zostaje pomyślnie usunięte i nie jest już widoczne dla użytkowników. |
+| TC_06 | Przegląd listy użytkowników przez administratora | 1. Zaloguj się jako administrator. 2. Przejdź do sekcji zarządzania użytkownikami. 3. Sprawdź, czy lista użytkowników jest widoczna i zawiera wszystkie istniejące konta. | Lista użytkowników jest widoczna i zawiera wszystkie istniejące konta. |
+| TC_07 | Rozwiązanie testu przez użytkownika | 1. Zaloguj się na konto użytkownika. 2. Wybierz test do rozwiązania. 3. Odpowiedz na pytania testowe. 4. Zapisz test na koncie użytkownika. | Test zostaje pomyślnie rozwiązany i zapisany na koncie użytkownika. |
+| TC_08 | Przegląd wyników testu przez użytkownika | 1. Zaloguj się na konto użytkownika. 2. Przejdź do sekcji wyników testów. 3. Sprawdź, czy wyniki wcześniej rozwiązanych testów są widoczne. | Wyniki wcześniej rozwiązanych testów są widoczne na koncie użytkownika. |
+| TC_09 | Logowanie z błędnymi danymi | 1. Otwórz stronę logowania. 2. Wprowadź nieprawidłowe dane logowania (np. błędne hasło). 3. Sprawdź, czy użytkownik otrzymuje odpowiedni komunikat o błędzie. | Użytkownik otrzymuje odpowiedni komunikat o błędzie przy logowaniu z błędnymi danymi. |
+| TC_10 | Rejestracja z istniejącym adresem e-mail | 1. Otwórz stronę rejestracji. 2. Wprowadź dane rejestracyjne z już istniejącym adresem e-mail. 3. Sprawdź, czy użytkownik otrzymuje odpowiedni komunikat o błędzie dotyczący unikalności adresu e-mail. | Użytkownik otrzymuje odpowiedni komunikat o błędzie dotyczący unikalności adresu e-mail przy rejestracji z istniejącym adresem. |
+
