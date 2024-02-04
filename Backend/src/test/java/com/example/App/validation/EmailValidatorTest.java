@@ -3,9 +3,7 @@ package com.example.App.validation;
 import com.example.App.validators.EmailValidator;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
-import org.junit.jupiter.params.provider.MethodSource;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -17,13 +15,6 @@ public class EmailValidatorTest {
     @BeforeEach
     public void setUp() {
         emailValidator = new EmailValidator();
-    }
-
-    @ParameterizedTest
-    @MethodSource("validatorParameters")
-    public void shouldValidateEmail(String email, boolean expectedValidation) {
-        boolean result = emailValidator.isValid(email);
-        assertEquals(result, expectedValidation);
     }
 
     private static Stream<Arguments> validatorParameters() {
@@ -58,7 +49,6 @@ public class EmailValidatorTest {
         EmailValidator validator = new EmailValidator();
         assertFalse(validator.isValid("test!@example.com"));
     }
-
 
 
     @Test

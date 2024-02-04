@@ -153,7 +153,7 @@ const Account = () => {
                             </table>
                         </div>
                     </div>
-                    <button style={{width: "300", alignSelf:"center"}} className="button-signup" onClick={generatePDF}> Generate PDF </button>
+                    <button style={{width: "auto", alignSelf:"center"}} className="button-signup" onClick={generatePDF}> Generate PDF </button>
 
                 </div>
             </div>

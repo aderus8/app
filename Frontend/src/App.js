@@ -105,12 +105,6 @@ function App() {
     }
 
 
-    // const [isDarkMode, setIsDarkMode] = useState(false);
-    //
-    // const toggleDarkMode = () => {
-    //     setIsDarkMode((prevState) => !prevState);
-    // };
-
   return (
       <>
           <Navbar isSide={side} onSideMenuToggle={handleSideMenu} />
