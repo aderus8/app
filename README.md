@@ -2,11 +2,11 @@
 
 Projekt inżynierski | Agnieszka Derus | 2024
 
-## 📚 Opis
+## Opis
 
 Aplikacja webowa wspomagająca naukę języków obcych, zbudowana w technologii **React.js** (frontend) oraz **Spring Boot** (backend). Umożliwia użytkownikom naukę słówek, gramatyki, wymowy, a także rozwiązywanie quizów i testów, dostosowanych do poziomu językowego od A1 do C2.
 
-## 🎯 Funkcjonalności
+## Funkcjonalności
 
 - Rejestracja i logowanie (z użyciem JWT)
 - Role użytkowników: Gość, Użytkownik, Administrator
@@ -16,7 +16,7 @@ Aplikacja webowa wspomagająca naukę języków obcych, zbudowana w technologii 
 - Panel administratora z zarządzaniem słówkami i użytkownikami
 - Eksport wyników do PDF
 
-## 🛠️ Technologie
+##  Technologie
 
 ### Frontend:
 - **React.js** + JSX
@@ -35,7 +35,7 @@ Aplikacja webowa wspomagająca naukę języków obcych, zbudowana w technologii 
 
 System zarządza danymi użytkowników, wynikami testów i quizów, oraz słownictwem w relacyjnej bazie danych MySQL. Dane są chronione poprzez bezpieczne szyfrowanie haseł (BCrypt).
 
-## 🔐 Bezpieczeństwo
+## Bezpieczeństwo
 
 - Uwierzytelnianie i autoryzacja JWT
 - Rola użytkownika zapisywana w tokenie
@@ -43,22 +43,21 @@ System zarządza danymi użytkowników, wynikami testów i quizów, oraz słowni
 - Ochrona endpointów
 - Haszowanie haseł z BCryptPasswordEncoder
 
-## ✅ Testowanie
+## Testowanie
 
 - Testy jednostkowe (np. walidacja adresu e-mail)
 - Testy integracyjne (np. dodawanie/usuwanie słówek)
 - Framework testowy: JUnit
 
-## 🖼️ Zrzuty ekranu
+##  Zrzuty ekranu
 
-## 🖼️ Zrzuty ekranu
+![obraz](https://github.com/user-attachments/assets/27b321cb-75f3-41a3-8067-67b3af4350f7)
+![obraz](https://github.com/user-attachments/assets/f2702ca1-ca45-4d4a-be01-e5603bc3bb19)
+![obraz](https://github.com/user-attachments/assets/dccba300-5283-43a1-b79d-a29c7b25401c)
+![obraz](https://github.com/user-attachments/assets/f33d9c83-f045-46f1-8bbe-ef4c866abe77)
 
-![alt text](image.png)
-![alt text](image-1.png)
-![alt text](image-2.png)
-![alt text](image-3.png)
-![alt text](image-4.png)
-## 🚀 Możliwości rozwoju
+
+##  Możliwości rozwoju
 
 - Rozbudowa treści edukacyjnych
 - Funkcje społecznościowe (fora, czaty)
