@@ -56,9 +56,17 @@ System zarządza danymi użytkowników, wynikami testów i quizów, oraz słowni
 
 ![obraz](https://github.com/user-attachments/assets/dccba300-5283-43a1-b79d-a29c7b25401c)
 
+![obraz](https://github.com/user-attachments/assets/dbfece22-f460-4910-b3ea-915ed8aae5b0)
+
+
 ![obraz](https://github.com/user-attachments/assets/f33d9c83-f045-46f1-8bbe-ef4c866abe77)
 
 ![obraz](https://github.com/user-attachments/assets/9eec8c4b-c9a3-4f87-a625-803a8a5ca575)
+
+![obraz](https://github.com/user-attachments/assets/ea2aca1a-c027-4f51-8f90-a31b28266c24)
+
+![obraz](https://github.com/user-attachments/assets/8497a1bb-f992-4fd4-829d-282fe2342cf9)
+
 
 
 ##  Możliwości rozwoju
