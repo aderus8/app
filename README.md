@@ -1,31 +1,68 @@
-### Temat projektu
+# Aplikacja do nauki języków obcych
 
-Aplikacja do nauki języków obcych
+Projekt inżynierski | Agnieszka Derus | 2024
 
-### Opis projektu
+## 📚 Opis
 
-Aplikacja do nauki języków obcych została stworzona z myślą o skutecznej nauce nowych słówek oraz umiejętności komunikacyjnych w różnych językach. Aplikacja oferuje użytkownikom interaktywne ćwiczenia, testy oraz możliwość śledzenia postępów.
+Aplikacja webowa wspomagająca naukę języków obcych, zbudowana w technologii **React.js** (frontend) oraz **Spring Boot** (backend). Umożliwia użytkownikom naukę słówek, gramatyki, wymowy, a także rozwiązywanie quizów i testów, dostosowanych do poziomu językowego od A1 do C2.
 
-Główne Funkcje:
+## 🎯 Funkcjonalności
 
-Rejestracja i Logowanie:
+- Rejestracja i logowanie (z użyciem JWT)
+- Role użytkowników: Gość, Użytkownik, Administrator
+- Nauka poprzez ćwiczenia: czytanie, gra językowa, wymowa, gramatyka, słownictwo
+- System quizów i testów z zapisami wyników
+- Panel użytkownika z historią postępów
+- Panel administratora z zarządzaniem słówkami i użytkownikami
+- Eksport wyników do PDF
 
-Użytkownicy mogą założyć nowe konto, dostarczając podstawowe informacje. Istnieje opcja logowania dla zarejestrowanych użytkowników.
+## 🛠️ Technologie
 
-Ćwiczenia i Testy:
+### Frontend:
+- **React.js** + JSX
+- HTML/CSS
+- Obsługa JWT (localStorage)
+- Responsywny UI
 
-Aplikacja oferuje różnorodne ćwiczenia i testy z zakresu słownictwa, gramatyki i umiejętności komunikacyjnych.
-Testy obejmują różne poziomy trudności, umożliwiając dostosowanie do indywidualnych potrzeb użytkowników.
+### Backend:
+- **Java 17**
+- **Spring Boot** + Spring Security + Spring Data JPA
+- REST API
+- JWT Authorization
+- MySQL
 
-Progres i Wyniki:
+## 💾 Baza danych
 
-Użytkownicy mają dostęp do panelu śledzenia postępów, gdzie mogą sprawdzić jakie wyniki uzyskali w testach.
+System zarządza danymi użytkowników, wynikami testów i quizów, oraz słownictwem w relacyjnej bazie danych MySQL. Dane są chronione poprzez bezpieczne szyfrowanie haseł (BCrypt).
 
-Zarządzanie Słownictwem:
+## 🔐 Bezpieczeństwo
 
-Administratorzy mają możliwość dodawania nowych słówek do bazy danych, które są następnie dostępne dla wszystkich użytkowników.
+- Uwierzytelnianie i autoryzacja JWT
+- Rola użytkownika zapisywana w tokenie
+- Spring Security
+- Ochrona endpointów
+- Haszowanie haseł z BCryptPasswordEncoder
 
-Interaktywne Elementy:
+## ✅ Testowanie
 
-Aplikacja zawiera interaktywne elementy, takie jak nagrania dźwiękowe, aby ułatwić przyswajanie nowego słownictwa.
+- Testy jednostkowe (np. walidacja adresu e-mail)
+- Testy integracyjne (np. dodawanie/usuwanie słówek)
+- Framework testowy: JUnit
+
+## 🖼️ Zrzuty ekranu
+
+## 🖼️ Zrzuty ekranu
+
+![alt text](image.png)
+![alt text](image-1.png)
+![alt text](image-2.png)
+![alt text](image-3.png)
+![alt text](image-4.png)
+## 🚀 Możliwości rozwoju
+
+- Rozbudowa treści edukacyjnych
+- Funkcje społecznościowe (fora, czaty)
+- Mobilna wersja aplikacji
+- System personalizacji nauki na podstawie AI
+- Integracja z kontami nauczycieli
 
