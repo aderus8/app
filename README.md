@@ -19,10 +19,9 @@ Aplikacja webowa wspomagająca naukę języków obcych, zbudowana w technologii 
 ##  Technologie
 
 ### Frontend:
-- **React.js** + JSX
+- **React.js** + JS
 - HTML/CSS
 - Obsługa JWT (localStorage)
-- Responsywny UI
 
 ### Backend:
 - **Java 17**
